@@ -2,4 +2,4 @@
 
 ##Hit the real estate jackpot.#Purchase homes and properties for dimes and nickels and watch it quadruple in a matter of months!#
  
-![realEstate](Images/houses.jpg).
+![realEstate](Images/house.jpeg).
