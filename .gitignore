@@ -4,3 +4,4 @@
 .env
 # OS Noise
 .DS_Store
+.docx
