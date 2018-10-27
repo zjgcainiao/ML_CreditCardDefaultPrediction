@@ -1,7 +1,11 @@
 # IDE Noise
 .idea
-# Sensitive Info
+# db evnironment information Info
 .env
 # OS Noise
 .DS_Store
 .docx
+.env
+*.iml
+.idea/
+__pycache__
