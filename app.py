@@ -10,6 +10,7 @@ from sqlalchemy import text, desc
 from sqlalchemy import create_engine, func
 from flask import render_template
 from flask import Flask, jsonify
+from flask_pymongo import PyMongo
 # import pymysql
 # from tax_calculation import calc_fed_tax
 # from db_setup import *
@@ -66,7 +67,7 @@ load_dotenv()
 #################################################
 app = Flask(__name__, static_folder='./static', static_url_path='')
 
-
+mongo = PyMongo(app, uri="mongodb://localhost:27017/payments_db")
 #################################################
 # Flask Routes
 #################################################
@@ -137,7 +138,11 @@ def passengers():
         all_households.append(households_dict)
 
     return jsonify(all_households)
-
+	
+@app.route("/tbl")
+def tbl():
+    everything = mongo.db.collection.find()
+    return render_template('index.html', everything=everything)
 
 if __name__ == '__main__':
     app.run(debug=True)
