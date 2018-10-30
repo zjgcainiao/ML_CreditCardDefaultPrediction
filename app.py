@@ -10,7 +10,7 @@ from sqlalchemy import text, desc
 from sqlalchemy import create_engine, func
 from flask import render_template
 from flask import Flask, jsonify
-import pymysql
+# import pymysql
 # from tax_calculation import calc_fed_tax
 # from db_setup import *
 # from flask_cache import Cache
@@ -30,19 +30,19 @@ load_dotenv()
 # mysql_connection=db_type_prefix+username+":"+password+ \
 #             '@'+host+':'+port+'/'+table
            
-mysql_connection="mysql://zjgcainiao:pythonrocks@boringtaxstory.cz3mz9lucrsr.us-west-2.rds.amazonaws.com:3292/TaxRate"
-engine = create_engine(mysql_connection)
+# mysql_connection="mysql://zjgcainiao:pythonrocks@boringtaxstory.cz3mz9lucrsr.us-west-2.rds.amazonaws.com:3292/TaxRate"
+# engine = create_engine(mysql_connection)
 
-# reflect an existing database into a new model
-# Base=declarative_base()
-Base = automap_base()
+# # reflect an existing database into a new model
+# # Base=declarative_base()
+# Base = automap_base()
 
-class household_income_by_state_us (Base):
-    __tablename__ = 'household_income_by_state_us',
-    State = Column(String(255), primary_key=True)
-    Median_Income_2017=Column(Integer)
-    Median_Income_2016=Column(Integer)
-    Median_Income_2015=Column(Integer)
+# class household_income_by_state_us (Base):
+#     __tablename__ = 'household_income_by_state_us',
+#     State = Column(String(255), primary_key=True)
+#     Median_Income_2017=Column(Integer)
+#     Median_Income_2016=Column(Integer)
+#     Median_Income_2015=Column(Integer)
 
 # class state_revenue_per_capita (Base):
 #     __tablename__ = 'statesRevenue',
@@ -53,13 +53,13 @@ class household_income_by_state_us (Base):
 
 
 # reflect the tables
-Base.prepare(engine, reflect=True)
+# Base.prepare(engine, reflect=True)
 
-# Save reference to the table
-Household_Income = Base.classes.household_income_by_state_us
-State_Revenue_Per_Capita=Base.classes.statesRevenue
-# Create our session (link) from Python to the DB
-session = Session(engine)
+# # Save reference to the table
+# Household_Income = Base.classes.household_income_by_state_us
+# State_Revenue_Per_Capita=Base.classes.statesRevenue
+# # Create our session (link) from Python to the DB
+# session = Session(engine)
 
 #################################################
 # Flask Setup
@@ -79,23 +79,23 @@ def welcome():
     return render_template('index.html')
 
 @app.route("/states")
-def fetch_state_revenues():
-    """Return a list of all passenger names"""
-    # Query all passengers
-    # sql=text('SELECT * FROM TaxRate.statesRevenue order by revenuePerCapita DESC limit 10')
-    results = session.query(State_Revenue_Per_Capita) \
-                     .order_by(desc(State_Revenue_Per_Capita.revenuePerCapita)).limit(10).all()
-    # results=session.execute(sql)
-    # Convert list of tuples into normal list
-    state_revenue_list=[]
-    for item in results:
-        state_revenue_dict={}
-        state_revenue_dict['State_Name']=item.stateName
-        state_revenue_dict['Revenue_Per_Capita']=item.revenuePerCapita
-        state_revenue_list.append(state_revenue_dict)
+# def fetch_state_revenues():
+#     """Return a list of all passenger names"""
+#     # Query all passengers
+#     # sql=text('SELECT * FROM TaxRate.statesRevenue order by revenuePerCapita DESC limit 10')
+#     results = session.query(State_Revenue_Per_Capita) \
+#                      .order_by(desc(State_Revenue_Per_Capita.revenuePerCapita)).limit(10).all()
+#     # results=session.execute(sql)
+#     # Convert list of tuples into normal list
+#     state_revenue_list=[]
+#     for item in results:
+#         state_revenue_dict={}
+#         state_revenue_dict['State_Name']=item.stateName
+#         state_revenue_dict['Revenue_Per_Capita']=item.revenuePerCapita
+#         state_revenue_list.append(state_revenue_dict)
 
 
-    return jsonify(state_revenue_list)
+#     return jsonify(state_revenue_list)
 
 @app.route("/tax_data/<status>")
 def tax_data_calculation(status):
