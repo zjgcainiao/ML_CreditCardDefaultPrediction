@@ -1,5 +1,5 @@
 
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 import numpy as np
 import os
 # import sqlalchemy
@@ -14,7 +14,7 @@ from flask import Flask, jsonify
 # from tax_calculation import calc_fed_tax
 # from db_setup import *
 # from flask_cache import Cache
-load_dotenv()
+# load_dotenv()
 
 #################################################
 # Database Setup
@@ -64,9 +64,11 @@ load_dotenv()
 #################################################
 # Flask Setup
 #################################################
-app = Flask(__name__, static_folder='./static', static_url_path='')
+application = Flask(__name__, static_folder='./static', static_url_path='')
 
-
+# to make it work with AWS Elastic Beans
+app=application
+# app = Flask(__name__)
 #################################################
 # Flask Routes
 #################################################
