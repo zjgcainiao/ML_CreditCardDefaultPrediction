@@ -1,7 +1,7 @@
 console.log("Welcome to our Dashboard, We are getting data from MYSQL  database and generating Javascript Plotly!!");
 
 let plot1_url = `/default/bygender`;
-let plot2_url = "hello";
+let plot2_url = `default/sept_delays`;
 
 function byGender(){
   d3.json(plot1_url).then((data) => {
@@ -40,9 +40,18 @@ function byGender(){
 });
 }
 
+function sept_delayedPayments(){
+  d3.json(plot2_url).then((data) => {
+    console.log(data);
+
+  })
+}
+
+
  function init() {
    console.log('byGender:', byGender)
    byGender();
+   sept_delayedPayments();
    //
    //
  }

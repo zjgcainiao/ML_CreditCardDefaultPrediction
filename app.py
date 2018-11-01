@@ -55,7 +55,7 @@ def default_gender():
     return jsonify(results)
 
 
-@app.route("/april_delayed/default")
+@app.route("/default/april_delays")
 def april():
     results = []
     cursor.execute("select pay_6 as months_delayed_since_April,count(pay_6) as number_of_accounts from CreditCardDefault.credit_card_tbl where cc_default = 0 group by pay_6")
@@ -64,7 +64,7 @@ def april():
         results.append(row)
     return jsonify(results)
 
-@app.route("/may_delays/default")
+@app.route("/default/may_delays")
 def may():
     results = []
     cursor.execute("select pay_5 as months_delayed_since_May,count(pay_5) as number_of_accounts from CreditCardDefault.credit_card_tbl where cc_default = 0 group by pay_5")
@@ -73,7 +73,7 @@ def may():
         results.append(row)
     return jsonify(results)
 
-@app.route("/june_delays/default")
+@app.route("/default/june_delays")
 def june():
     results = []
     cursor.execute("select pay_4 as months_delayed_since_June,count(pay_4) as number_of_accounts from CreditCardDefault.credit_card_tbl where cc_default = 0 group by pay_4")
@@ -83,7 +83,7 @@ def june():
     return jsonify(results)
 
 
-@app.route("/july_delays/default")
+@app.route("/default/july_delays")
 def julydelays():
     results = []
     cursor.execute("select pay_3 as months_delayed_since_July,count(pay_3) as number_of_accounts from CreditCardDefault.credit_card_tbl where cc_default = 0 group by pay_3")
@@ -92,7 +92,7 @@ def julydelays():
         results.append(row)
     return jsonify(results)
 
-@app.route("/aug_delays/default")
+@app.route("/default/aug_delays")
 def august():
     results = []
     cursor.execute("select pay_2 as months_delayed_since_Aug,count(pay_2) as number_of_accounts from CreditCardDefault.credit_card_tbl where cc_default = 0 group by pay_2")
@@ -101,7 +101,7 @@ def august():
         results.append(row)
     return jsonify(results)    
 
-@app.route("/sept_delays/default")
+@app.route("/default/sept_delays")
 def september():
     results = []
     cursor.execute("select pay_1 as months_delayed_since_Sept,count(pay_1) as number_of_accounts from CreditCardDefault.credit_card_tbl where cc_default = 0 group by pay_1")
