@@ -1,28 +1,32 @@
-# [Credit Card Default Predicting Model](https://127.0.0.1/)
+# [Credit Card Default Predicting Model](http://fpg4finalproject-env.uyjerqqha9.us-west-2.elasticbeanstalk.com/)
 
-[Stylish Portfolio](http://startbootstrap.com/template-overviews/stylish-portfolio/) is a responsive, one page portfolio theme for [Bootstrap](http://getbootstrap.com/) created by [Start Bootstrap](http://startbootstrap.com/). The theme features multiple content sections with an off canvas navigation menu.
+ We are using the data from [placeholder](https://archive.ics.uci.edu/ml/datasets/default+of+credit+card+clients) to create a credit card defaulting prediction model. There are 23 variables in our trained neutral network model.
+
+ !11-01-2018
 
 ## Preview
 
-[![Stylish Portfolio Preview](https://startbootstrap.com/assets/img/templates/stylish-portfolio.jpg)](https://blackrockdigital.github.io/startbootstrap-stylish-portfolio/)
+[![Wesbite Preview](static/img/website_preview.png)](http://fpg4finalproject-env.uyjerqqha9.us-west-2.elasticbeanstalk.com/)
 
-**[View Live Preview](https://blackrockdigital.github.io/startbootstrap-stylish-portfolio/)**
+**[View Live Preview](http://fpg4finalproject-env.uyjerqqha9.us-west-2.elasticbeanstalk.com/)**
 
-## Status
+## Libraries
+- Bootstrap HTML/CSS/JS librar
+- Python Flask based app
+- mySql DB hosted in AWS cloud
+- plotly.js for visualization
 
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/BlackrockDigital/startbootstrap-stylish-portfolio/master/LICENSE)
-[![npm version](https://img.shields.io/npm/v/startbootstrap-stylish-portfolio.svg)](https://www.npmjs.com/package/startbootstrap-stylish-portfolio)
-[![Build Status](https://travis-ci.org/BlackrockDigital/startbootstrap-stylish-portfolio.svg?branch=master)](https://travis-ci.org/BlackrockDigital/startbootstrap-stylish-portfolio)
-[![dependencies Status](https://david-dm.org/BlackrockDigital/startbootstrap-stylish-portfolio/status.svg)](https://david-dm.org/BlackrockDigital/startbootstrap-stylish-portfolio)
-[![devDependencies Status](https://david-dm.org/BlackrockDigital/startbootstrap-stylish-portfolio/dev-status.svg)](https://david-dm.org/BlackrockDigital/startbootstrap-stylish-portfolio?type=dev)
 
-## Download and Installation
+## Steps
+* create a new project folder
+`mkdir creditcardPrediction`
+* navigate to the project folder `cd creditcardPrediction`
+* create a virtual environment (optional). let's say the virtual environment's name is "finalproject". `virtualenv finalproject`
+* activate the virtualevn `source finalproject/bin/activate`
+* install flask library `conda install flask==1.0.2` or `pip install flask=1.0.2`. 
+Visit here more to get more about [Flask](http://flask.pocoo.org/)
+* [this is a placeholder]()
 
-To begin using this template, choose one of the following options to get started:
-* [Download the latest release on Start Bootstrap](https://startbootstrap.com/template-overviews/stylish-portfolio/)
-* Install via npm: `npm i startbootstrap-stylish-portfolio`
-* Clone the repo: `git clone https://github.com/BlackrockDigital/startbootstrap-stylish-portfolio.git`
-* [Fork, Clone, or Download on GitHub](https://github.com/BlackrockDigital/startbootstrap-stylish-portfolio)
 
 ## Usage
 
@@ -54,12 +58,13 @@ Start Bootstrap has a public Slack channel which is a great place to ask questio
 
 Have a bug or an issue with this template? [Open a new issue](https://github.com/BlackrockDigital/startbootstrap-stylish-portfolio/issues) here on GitHub or leave a comment on the [template overview page at Start Bootstrap](http://startbootstrap.com/template-overviews/stylish-portfolio/).
 
-## About
+## Deploy the code into AWS
 
-Start Bootstrap is an open source library of free Bootstrap templates and themes. All of the free templates and themes on Start Bootstrap are released under the MIT license, which means you can use them for any purpose, even for commercial projects.
 
-* https://startbootstrap.com
-* https://twitter.com/SBootstrap
+Please refer to [here](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create-deploy-python-flask.html#python-flask-setup-venv) and find more information about AWS Elastic BeanTalk Deployment 
+
+
+
 
 Start Bootstrap was created by and is maintained by **[David Miller](http://davidmiller.io/)**, Owner of [Blackrock Digital](http://blackrockdigital.io/).
 
@@ -71,4 +76,15 @@ Start Bootstrap is based on the [Bootstrap](http://getbootstrap.com/) framework 
 
 ## Copyright and License
 
-Copyright 2013-2018 Blackrock Digital LLC. Code released under the [MIT](https://github.com/BlackrockDigital/startbootstrap-stylish-portfolio/blob/gh-pages/LICENSE) license.
+Code released under the [MIT]
+
+Teammates:
+* [Abulla Othow Othuw]
+* [Alexandra Boonsook]
+* [Farai Mungofa]
+* [Shanakay Brandford]
+* [Stephen Wang]
+
+The template is based on the [style portfolio](https://blackrockdigital.github.io/startbootstrap-stylish-portfolio).
+* https://startbootstrap.com
+* https://twitter.com/SBootstrap
