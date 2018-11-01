@@ -95,7 +95,7 @@ def julydelays():
 @app.route("/default/aug_delays")
 def august():
     results = []
-    cursor.execute("select pay_2 as months_delayed_since_Aug,count(pay_2) as number_of_accounts from CreditCardDefault.credit_card_tbl where cc_default = 0 group by pay_2")
+    cursor.execute("select pay_2 as months_delayed_since_Aug,count(pay_2) as number_of_accounts from CreditCardDefault.credit_card_tbl group by pay_2")
     for row in cursor:
         print(row)
         results.append(row)
@@ -104,14 +104,11 @@ def august():
 @app.route("/default/sept_delays")
 def september():
     results = []
-    cursor.execute("select pay_1 as months_delayed_since_Sept,count(pay_1) as number_of_accounts from CreditCardDefault.credit_card_tbl where cc_default = 0 group by pay_1")
+    cursor.execute("select pay_1 as months_delayed_since_Sept,count(pay_1) as number_of_accounts from CreditCardDefault.credit_card_tbl where cc_default=0 group by pay_1")
     for row in cursor:
         print(row)
         results.append(row)
     return jsonify(results)     
-
-
-
 
 
 @app.route("/sum/delayPayment/byage")
