@@ -1,32 +1,78 @@
 console.log("Welcome to our Dashboard, We are getting data from MYSQL  database and generating Javascript Plotly!!");
 
+let plot1_url = `/default/bygender`;
+let plot2_url = "hello";
+
 function byGender(){
- d3.json("/default/bygender").then((data) => {
-  const male = data.male;
-  const num_recs = data.total_num_CC_default;
-  const col_id = [120,125,130,135,140,145,150,155]
-  console.log(male)
+  d3.json(plot1_url).then((data) => {
+    console.log(data);
+    // create a gender array
 
+    const gender = [];
+    // gender.push(data[0]['male'])
+    // gender.push(data[1]['male'])
 
-  var pielayout = {
-    margin:{t:0, l:0}
-   }
- 
-   var data = [{
-    values: male.slice(0,len(num_recs)),
-    labels: num_recs.slice(0,len(num_recs)), 
-    hovertext: num_recs.slice(0,len(num_recs)),
-    hover_info: "hovertext",
-    type:'pie'
-   }];
-   Plotly.newPlot("pie", data,pielayout);
- });
- }
+    gender.push('female')
+    gender.push('male')
 
+    const total_cc_default = [];
+    total_cc_default.push(data[0]['total_num_CC_default'])
+    total_cc_default.push(data[1]['total_num_CC_default'])
 
+    console.log(total_cc_default);
+    // console.log(data);
+  var pieData = [
+    {
+      values: total_cc_default, // should look like => [14349, 9015]
+      labels: gender,
+      hovertext: gender,
+      hoverinfo: "hovertext",
+      type: "pie"
+    }
+  ];
+
+  var pieLayout = {
+    margin: { t: 0, l: 0 }
+  };
+
+  Plotly.plot("pie", pieData, pieLayout);
+  console.log("*******");
+});
+}
 
  function init() {
-
-      byGender();
+   console.log('byGender:', byGender)
+   byGender();
+   //
+   //
  }
+
  init();
+
+
+
+
+
+
+//   var pielayout = {
+//     margin:{t:0, l:0}
+//    }
+ 
+//    var data = [{
+//     values: male.slice(0,len(num_recs)),
+//     labels: num_recs.slice(0,len(num_recs)), 
+//     hovertext: num_recs.slice(0,len(num_recs)),
+//     hover_info: "hovertext",
+//     type:'pie'
+//    }];
+//    Plotly.newPlot("pie", data,pielayout);
+//  });
+//  }
+
+
+
+//  function init() {
+
+//       byGender();
+//  }
+//  init();

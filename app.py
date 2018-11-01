@@ -47,7 +47,77 @@ def visuals():
 @app.route("/default/bygender")
 def default_gender():
     results = []
-    cursor.execute("SELECT male, COUNT(male) as total_num_CC_default FROM CreditCardDefault.credit_card_tbl GROUP BY male")
+    cursor.execute("SELECT male, COUNT(male) as total_num_CC_default FROM CreditCardDefault.credit_card_tbl WHERE cc_default=0 GROUP BY male")
+    print('Description: ', cursor.description)
+    for row in cursor:
+        print(row)
+        results.append(row)
+    return jsonify(results)
+
+
+@app.route("/april_delayed/default")
+def april():
+    results = []
+    cursor.execute("select pay_6 as months_delayed_since_April,count(pay_6) as number_of_accounts from CreditCardDefault.credit_card_tbl where cc_default = 0 group by pay_6")
+    for row in cursor:
+        print(row)
+        results.append(row)
+    return jsonify(results)
+
+@app.route("/may_delays/default")
+def may():
+    results = []
+    cursor.execute("select pay_5 as months_delayed_since_May,count(pay_5) as number_of_accounts from CreditCardDefault.credit_card_tbl where cc_default = 0 group by pay_5")
+    for row in cursor:
+        print(row)
+        results.append(row)
+    return jsonify(results)
+
+@app.route("/june_delays/default")
+def june():
+    results = []
+    cursor.execute("select pay_4 as months_delayed_since_June,count(pay_4) as number_of_accounts from CreditCardDefault.credit_card_tbl where cc_default = 0 group by pay_4")
+    for row in cursor:
+        print(row)
+        results.append(row)
+    return jsonify(results)
+
+
+@app.route("/july_delays/default")
+def julydelays():
+    results = []
+    cursor.execute("select pay_3 as months_delayed_since_July,count(pay_3) as number_of_accounts from CreditCardDefault.credit_card_tbl where cc_default = 0 group by pay_3")
+    for row in cursor:
+        print(row)
+        results.append(row)
+    return jsonify(results)
+
+@app.route("/aug_delays/default")
+def august():
+    results = []
+    cursor.execute("select pay_2 as months_delayed_since_Aug,count(pay_2) as number_of_accounts from CreditCardDefault.credit_card_tbl where cc_default = 0 group by pay_2")
+    for row in cursor:
+        print(row)
+        results.append(row)
+    return jsonify(results)    
+
+@app.route("/sept_delays/default")
+def september():
+    results = []
+    cursor.execute("select pay_1 as months_delayed_since_Sept,count(pay_1) as number_of_accounts from CreditCardDefault.credit_card_tbl where cc_default = 0 group by pay_1")
+    for row in cursor:
+        print(row)
+        results.append(row)
+    return jsonify(results)     
+
+
+
+
+
+@app.route("/sum/delayPayment/byage")
+def delaycc():
+    results = []
+    cursor.execute("SELECT age, sum(limit_bal) as cc_limit,sum(pay_1)as Sept_AvgDelay, sum(pay_2) as Aug_avgDelay, sum(pay_3) as July_avgDelay,sum(pay_4)as June_avgDelay, sum(pay_5) as May_avgDelay, sum(pay_6) as April_AvgDeliquency FROM CreditCardDefault.credit_card_tbl GROUP BY age")   
     print('Description: ', cursor.description)
     for row in cursor:
         print(row)
