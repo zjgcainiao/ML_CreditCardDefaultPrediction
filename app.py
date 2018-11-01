@@ -16,14 +16,7 @@ from sqlalchemy import text
 # load_dotenv()
 
 
-prefix=os.getenv("DATABASE_PREFIX")
-host=os.getenv("DATABASE_HOST")
-user=os.getenv("DATABASE_USERNAME")
-password=os.getenv("DATABASE_PASSWORD")
-port=int(os.getenv("DATABASE_PORT"))
-db=os.getenv("DATABASE_NAME")
 
-connection = pymysql.connect(host=host, user=user, passwd=password, db=db, port=port, cursorclass=pymysql.cursors.DictCursor)
 
 # reflect the tables
 # Base.prepare(engine, reflect=True)
@@ -38,12 +31,22 @@ connection = pymysql.connect(host=host, user=user, passwd=password, db=db, port=
 # Flask Setup
 #################################################
 application = Flask(__name__, static_folder='./static', static_url_path='')
-
-# Establish cursor. NOTE: This will be used to perform SQL queries (even in raw query form!)
-cursor = connection.cursor(pymysql.cursors.DictCursor)
 # to make it work with AWS Elastic Beans
 app=application
-# app = Flask(__name__)
+
+
+## set up the connection between AWS mysql with pymsql
+prefix=os.getenv("DATABASE_PREFIX")
+host=os.getenv("DATABASE_HOST")
+user=os.getenv("DATABASE_USERNAME")
+password=os.getenv("DATABASE_PASSWORD")
+port=int(os.getenv("DATABASE_PORT"))
+db=os.getenv("DATABASE_NAME")
+
+connection = pymysql.connect(host=host, user=user, passwd=password, db=db, port=port, cursorclass=pymysql.cursors.DictCursor)
+# Establish cursor. NOTE: This will be used to perform SQL queries (even in raw query form!)
+cursor = connection.cursor(pymysql.cursors.DictCursor)
+
 #################################################
 # Flask Routes
 #################################################
