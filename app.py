@@ -59,8 +59,20 @@ def welcome():
 def visuals():
     return render_template('visuals.html')    
 
+
+
+@app.route("/api/gender")
+def api_fetch_data():
+    results=[]
+    sql_script="SELECT count(id) as Counts, (case when male =0 then 'female' else 'male' end ) as 'gender' FROM CreditCardDefault.credit_card_tbl group by male"
+    cursor.execute(sql_script)
+    for row in cursor:
+        results.append(row)
+    return jsonify(results)
+
 @app.route("/default/bygender")
 def default_gender():
+    
     results = []
     cursor.execute("SELECT male, COUNT(male) as total_num_CC_default FROM CreditCardDefault.credit_card_tbl GROUP BY male")
     print('Description: ', cursor.description)
@@ -69,8 +81,8 @@ def default_gender():
         results.append(row)
     return jsonify(results)
 
-    cursor.close()
-    connection.close()
+    # cursor.close()
+    # connection.close()
 
 if __name__ == '__main__':
     app.run(debug=True)
