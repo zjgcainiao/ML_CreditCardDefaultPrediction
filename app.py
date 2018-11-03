@@ -59,7 +59,9 @@ def welcome():
 def visuals():
     return render_template('visuals.html')    
 
-
+@app.route("/presentation")
+def reveal_demo():
+    return render_template('slides_deck.html')
 
 @app.route("/api/gender")
 def api_fetch_data():
