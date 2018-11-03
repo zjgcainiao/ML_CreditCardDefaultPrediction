@@ -102,7 +102,7 @@ for row in csv_data:
   insert_statement = """INSERT INTO credit_card_tbl
 (`limit_bal`, `age`, `pay_1`, `pay_2`, `pay_3`,`pay_4`, `pay_5`,`pay_6`,`bill_amt1`,`bill_amt2`,`bill_amt3`,`bill_amt4`,`bill_amt5`,`bill_amt6`,`pay_amt1`, `pay_amt2`,`pay_amt3`,`pay_amt4`,`pay_amt5`,`pay_amt6`, `cc_default`,`grad_school`, `university`, `high_school`, `male`, `married`)
 VALUES
-(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)""" % (limit_bal, age, pay_1, pay_2, pay_3,pay_4,pay_5,pay_6,bill_amt1,bill_amt2,bill_amt3,bill_amt4,bill_amt5,bill_amt6,pay_amt1, pay_amt2,pay_amt3,pay_amt4,pay_amt5,pay_amt6, default,grad_school,university,high_school,male,married)
+(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)""" % (limit_bal, age, pay_1, pay_2, pay_3,pay_4,pay_5,pay_6,bill_amt1,bill_amt2,bill_amt3,bill_amt4,bill_amt5,bill_amt6,pay_amt1, pay_amt2,pay_amt3,pay_amt4,pay_amt5,pay_amt6,cc_default,grad_school,university,high_school,male,married)
 
 
 #print(insert_statement)

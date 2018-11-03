@@ -43,38 +43,34 @@ function byGender(){
 function sept_delayedPayments(){
   d3.json(plot2_url).then((data) => {
     console.log(data);
-  })
-};
-//     const i = 0; 
-//     const num_mos = [];
-//     const num_acc = [];
+    const num_acc=[];
+    const months =[];
+    for(var i=0; i<length(data);i++){
+      num_acc.push(data[i]['number_of_accounts'])
+      months.push(data[i]['months_delayed_since_Sept'])
+    }
+    console.log(num_acc);
 
-//     data.forEach(element => {
-      
-//     });
-//     //   num_mos.push(data[i]['months_delayed_since_September'])
-//     //   num_acc.push(data[i]['number_of_accounts'])
-//     // }
-//     var layout = {
-//       margin:{t:0},
-//       hovermode:"closest",
-//       xaxis:{title:"Number of Months Dealayed"}, 
-//       yaxis:{title:"Number of Credit Card Accounts"}
-//     };
-
-//     var trace1 = {
-//       x: area_names,
-//       y: num_acc,
-//       mode: 'markers',
-//       marker: {
-//         // size: [40, 60, 80, 100]
-//       }
-//     };
+    var layout = {
+      margin:{t:0},
+      hovermode:"closest",
+      xaxis:{title:"Number of Months delayed"}, 
+      yaxis:{title:"Number of Accounts"}
+    };
     
-//     var data = [trace1];
-//     Plotly.newPlot("bubbles", data, layout);
-//   })
-// }
+    var data = [{
+      x: months,
+      y: num_acc, 
+      type: 'bar',
+      mode: "markers",
+      marker: {
+        colorscale: "Portland"
+      }
+    }];
+    Plotly.newPlot("bar", data, layout)      
+});     
+}
+
 
 
  function init() {

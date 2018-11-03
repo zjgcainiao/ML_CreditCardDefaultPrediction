@@ -28,8 +28,7 @@ db=os.getenv("DATABASE_NAME")
 connection = pymysql.connect(host=host, user=user, passwd=password, db=db, port=port, cursorclass=pymysql.cursors.DictCursor)
 
 # Establish cursor. NOTE: This will be used to perform SQL queries (even in raw query form!)
-# cursor = connection.cursor(pymysql.cursors.DictCursor)
-        
+cursor = connection.cursor(pymysql.cursors.DictCursor)
 
 
 #################################################
@@ -46,7 +45,6 @@ def visuals():
 
 @app.route('/default/bygender')
 def default_gender():
-    cursor = connection.cursor(pymysql.cursors.DictCursor)
     results = []
     cursor.execute("SELECT male, COUNT(male) as total_num_CC_default FROM CreditCardDefault.credit_card_tbl WHERE cc_default=0 GROUP BY male")
     print('Description: ', cursor.description)
@@ -57,11 +55,10 @@ def default_gender():
     cursor.close()
     connection.close()
 
-
-
+    
+   
 @app.route('/default/april_delays')
 def april():
-    cursor = connection.cursor(pymysql.cursors.DictCursor)
     results = []
     cursor.execute("select pay_6 as months_delayed_since_April,count(pay_6) as number_of_accounts from CreditCardDefault.credit_card_tbl where cc_default = 0 group by pay_6")
     for row in cursor:
@@ -70,6 +67,7 @@ def april():
     return jsonify(results)
     cursor.close()
     connection.close()
+  
 
 @app.route('/default/may_delays')
 def may():
@@ -82,6 +80,8 @@ def may():
     return jsonify(results)
     cursor.close()
     connection.close()
+
+ 
 
 
 
@@ -110,6 +110,8 @@ def julydelays():
     return jsonify(results)
     cursor.close()
     connection.close()
+    
+    
 
 
 
@@ -123,7 +125,9 @@ def august():
         results.append(row)
     return jsonify(results)
     cursor.close()
-    connection.close()    
+    connection.close()
+   
+      
 
 @app.route('/default/sept_delays')
 def september():
@@ -136,6 +140,8 @@ def september():
     return jsonify(results)  
     cursor.close()
     connection.close()
+
+   
 
 
 @app.route("/sum/delayPayment/byage")
