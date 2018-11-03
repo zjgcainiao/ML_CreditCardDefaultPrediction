@@ -5,16 +5,16 @@ $("#ModalPredictionInput").on('show.bs.modal', function(){
 
 
   // to display the graphic pictures
-  var svgWidth=600,svgHeight =500;
+  var svgWidth=800,svgHeight =600;
 
-  var margin = {top: 40, right: 20, bottom: 30, left: 40},
+  var margin = {top: 40, right: 40, bottom: 40, left: 40},
       width = svgWidth- margin.left - margin.right,
       height = svgHeight - margin.top - margin.bottom;
   
   var outRadius =  Math.min(svgWidth, svgHeight) / 2*0.7;
   var innerRadius=0;
   
-  var svgChart=d3.select('svg')
+  var svgChart=d3.select('.carousel-item').append('svg')
               .attr('width',svgWidth)
               .attr('height',svgHeight)
               .attr("transform", `translate(${margin.left}, ${margin.top})`);
