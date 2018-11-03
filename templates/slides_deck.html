@@ -4,10 +4,10 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>reveal.js – The HTML Presentation Framework</title>
+		<title>Presentation Mode</title>
 
 		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-		<meta name="author" content="Hakim El Hattab">
+		<meta name="author" content="Stephen Wang">
 
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -17,6 +17,8 @@
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/black.css" id="theme">
 
+		<!-- custom font -->
+		<link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
 
@@ -41,13 +43,26 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section>
-					<h1>Machine Learning Model</h1>
-					<h3>to predict credit card defaulting</h3>
-					<p>
-						<small>github Repo <a href="https://usc.bootcampcontent.com/fireproofsocks/fpg4">
-							Abulla
-						</a> and <a href="https://github.com/hakimel/reveal.js/graphs/contributors">contributors</a></small>
-					</p>
+					<section>
+						<h1>Machine Learning Model</h1>
+						<h3>to predict credit card defaulting</h3>
+						<h4>USC BootCamp Final Project</h4>
+						<a href="#" class="navigate-down"></a>
+						</section>
+					<section>
+						<h2>GitLab Repo   <a href="https://usc.bootcampcontent.com/fireproofsocks/fpg4">
+							<i class="fab fa-gitlab lg"></i>
+						</a></h2>
+						</br>
+						<h2 class='fragment'>Teammates</h2>
+						<ul class='fragment'>
+							<li>Abulla Othow Othuw</li>
+							<li>Alexandra Boonsook</li>
+							<li>Farai Mungofa</li>
+							<li>Shanakay Brandford</li>
+							<li>Stephen Wang</li>
+						</ul>
+					</section>
 				</section>
 
 				<section>
@@ -388,29 +403,11 @@ Reveal.addEventListener( 'customevent', function() {
 
 		<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.js"></script>
-
+		<script src="js/reveal_initialize.js"></script>
 		<script>
 
 			// More info https://github.com/hakimel/reveal.js#configuration
-			Reveal.initialize({
-				controls: true,
-				progress: true,
-				history: true,
-				center: true,
 
-				transition: 'slide', // none/fade/slide/convex/concave/zoom
-
-				// More info https://github.com/hakimel/reveal.js#dependencies
-				dependencies: [
-					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: 'plugin/search/search.js', async: true },
-					{ src: 'plugin/zoom-js/zoom.js', async: true },
-					{ src: 'plugin/notes/notes.js', async: true }
-				]
-			});
 
 		</script>
 
