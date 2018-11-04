@@ -16,8 +16,6 @@ from sqlalchemy import text
 # load_dotenv()
 
 
-
-
 # reflect the tables
 # Base.prepare(engine, reflect=True)
 

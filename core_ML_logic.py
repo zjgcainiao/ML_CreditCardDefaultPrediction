@@ -38,25 +38,6 @@ get_ipython().run_line_magic('matplotlib', 'inline')
 
 # ---------------------------------------
 
-# ## Get the Data
-
-# In[2]:
-
-
-df = pd.read_csv("default_of_credit_card.csv", header = 1)
-
-
-# In[3]:
-
-
-df.head()
-
-
-# * we can see from the data that:
-#     * the titles of the features are in capital. We need to change them to lowercase.
-#     * PAY_1, is missing. PAY_0 is meant to be PAY_1
-
-# In[4]:
 
 
 df.columns = [x.lower() for x in df.columns]
@@ -113,7 +94,6 @@ credit_default.head()
 # ** Use info and describe() on fd**
 
 # In[6]:
-
 
 credit_default.info()
 

@@ -40,10 +40,6 @@ Visit here more to get more about [Flask](http://flask.pocoo.org/)
 * visit the http://127.0.0.1:5000/ 
 
 
-
-
-
-
 ## Copyright and License
 
 Code released under the [MIT]
