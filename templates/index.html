@@ -4,9 +4,12 @@
   <head>
 
     <meta charset="utf-8">
+    
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="author" content="Stephen Wang">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
     <title>Credit Default Rate Neutral Network Model</title>
 
@@ -18,9 +21,11 @@
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
     <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
 
-    <!-- Custom CSS -->
+    <!-- template CSS -->
     <link href="css/stylish-portfolio.min.css" rel="stylesheet">
 
+    <!-- custom main style css -->
+    <link href='css/mainstyle.css' rel='stylesheet'>
   </head>
 
   <body id="page-top">
@@ -32,7 +37,7 @@
     <nav id="sidebar-wrapper">
       <ul class="sidebar-nav">
         <li class="sidebar-brand">
-          <a class="js-scroll-trigger" href="#page-top">Credit Card Default Rating</a>
+          <a class="js-scroll-trigger" href="/presentation?transition=concave">Presentation Mode</a>
         </li>
         <li class="sidebar-nav-item">
           <a class="js-scroll-trigger" href="#page-top">Home</a>
@@ -44,7 +49,7 @@
             <a class="js-scroll-trigger" href="#datavisualization">Data Visualization</a>
         </li>
         <li class="sidebar-nav-item">
-          <a class="js-scroll-trigger" href="#services">Services</a>
+          <a class="js-scroll-trigger" href="#mlModels">ML Models</a>
         </li>
         <li class="sidebar-nav-item">
           <a class="js-scroll-trigger" href="#portfolio">Portfolio</a>
@@ -72,109 +77,23 @@
       <div class="container text-center">
         <div class="row">
           <div class="col-lg-10 mx-auto">
-            <h2>Based on the 23 variables, we create a neutral netork to predict a customer's default possiblity.</h2>
-            <p class="lead mb-5">Our team collects more than 10,000 records of customer information.
-              <a href="https://unsplash.com/">Unsplash</a>!</p>
-            <a class="btn btn-dark btn-xl js-scroll-trigger" href="#services">What We Offer</a>
+            <h2>Based on the 24 variables, we create a neutral netork to predict a customer's default likehood.</h2>
+            <p class="lead mb-5">Our team collects information from more than 30,000 customers.
+              </p>
+            <a class="btn btn-dark btn-xl js-scroll-trigger" href="#datavisualization">Next</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Services -->
-    <section class="content-section bg-primary text-white text-center" id="services">
-      <div class="container">
-        <div class="content-section-heading">
-          <h3 class="text-secondary mb-0">Prediction Model</h3>
-          <h2 class="mb-5">Variables we input</h2>
-        </div>
-        <div class="row">
-          <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
-            <span class="service-icon rounded-circle mx-auto mb-3">
-              <i class="icon-screen-smartphone"></i>
-            </span>
-            <h4>
-              <strong>Age</strong>
-            </h4>
-            <p class="text-faded mb-0">Customer's age</p>
-          </div>
-          <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
-            <span class="service-icon rounded-circle mx-auto mb-3">
-              <i class="icon-pencil"></i>
-            </span>
-            <h4>
-              <strong>Gender</strong>
-            </h4>
-            <p class="text-faded mb-0">whether a customer is a female or male.</p>
-          </div>
-          <div class="col-lg-3 col-md-6 mb-5 mb-md-0">
-            <span class="service-icon rounded-circle mx-auto mb-3">
-              <i class="icon-like"></i>
-            </span>
-            <h4>
-              <strong>Credit Card Limit Balance</strong>
-            </h4>
-            <p class="text-faded mb-0">The maximum amount of the cutomer's credit crad line
-              <i class="fas fa-dollar-sign"></i>
-            </p>
-          </div>
-          <div class="col-lg-3 col-md-6">
-            <span class="service-icon rounded-circle mx-auto mb-3">
-              <i class="icon-mustache"></i>
-            </span>
-            <h4>
-              <strong>Income</strong>
-            </h4>
-            <p class="text-faded mb-0">how much the customer makes</p>
-          </div>
-        </div>
-        <button type="button"class="btn btn-xl btn-light mr-4" data-toggle="modal" data-target="#ModalPredictionInput"> Start a prediction</button>
-      </div>
-      <div class="container text-center"> 
-      </div>   
-    </section>
+   
 
-<!-- Central Modal Medium Success -->
-<div class="modal fade" id="ModalPredictionInput" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-notify modal-success" role="document">
-        <!--Content-->
-        <div class="modal-content">
-            <!--Header-->
-            <div class="modal-header">
-                <p class="heading lead">Input a New Customer Profile</p>
-    
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true" class="white-text">&times;</span>
-                </button>
-            </div>
-    
-            <!--Body-->
-            <div class="modal-body">
-                <div class="text-center">
-                    <i class="fa fa-check fa-4x mb-3 animated rotateIn"></i>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit iusto nulla aperiam blanditiis ad consequatur in dolores culpa, dignissimos, eius non possimus fugiat. Esse ratione fuga, enim,
-                        ab officiis totam.</p>
-                </div>
-            </div>
-    
-            <!--Footer-->
-            <div class="modal-footer justify-content-center">
-                <a type="button" class="btn btn-success">Get it now <i class="fa fa-diamond ml-1"></i></a>
-                <a type="button" class="btn btn-outline-success waves-effect" data-dismiss="modal">No, thanks</a>
-            </div>
-        </div>
-        <!--/.Content-->
-    </div>
-    </div>
-    <!-- Central Modal Medium Success-->
-
-    <section class="content-section" id="datavisualization">
-        <div class="container">
+    <section class="content-section bg-primary text-secondary" id="datavisualization">
+        <div class="container text-center my-auto">
           <div class="content-section-heading text-center">
             <h3 class="text-secondary mb-0">Data Visualization Placeholder</h3>
-            <h2 class="mb-5">How the data looks like</h2>
+            <h2 class="mb-5">How the dataset looks like</h2>
           </div>
-
         </div>
       </section>
 
@@ -189,7 +108,7 @@
               </ol>
               <div class="carousel-inner" role="listbox">
                 <!-- Slide One - Set the background image for this slide in the line below -->
-                <div class="carousel-item active" style="background-image: url('http://placehold.it/1900x1080')">
+                <div class="carousel-item active" style="background: transparent">
                   <div class="carousel-caption d-none d-md-block">
                     <h3>First Slide</h3>
                     <p>This is a description for the first slide.</p>
@@ -226,6 +145,68 @@
       </div>
     </section>
 
+ <!-- Variable in the dataset -->
+ <section class="content-section bg-primary text-white text-center" id="mlModels">
+    <div class="container text-center">
+      <div class="content-section-heading">
+        <h3 class="text-secondary mb-0">Prediction Model</h3>
+        <h2 class="mb-5">Variables we input</h2>
+      </div>
+      <div class="row">
+        <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+          <span class="service-icon rounded-circle mx-auto mb-3">
+            <i class="icon-screen-smartphone"></i>
+          </span>
+          <h4>
+            <strong>Age</strong>
+          </h4>
+          <p class="text-faded mb-0">Customer's age</p>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+          <span class="service-icon rounded-circle mx-auto mb-3">
+            <i class="icon-pencil"></i>
+          </span>
+          <h4>
+            <strong>Gender</strong>
+          </h4>
+          <p class="text-faded mb-0">whether a customer is a female or male.</p>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-5 mb-md-0">
+          <span class="service-icon rounded-circle mx-auto mb-3">
+            <i class="icon-like"></i>
+          </span>
+          <h4>
+            <strong>Credit Card Limit Balance</strong>
+          </h4>
+          <p class="text-faded mb-0">The maximum amount of the cutomer's credit crad line
+            <i class="fas fa-dollar-sign"></i>
+          </p>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <span class="service-icon rounded-circle mx-auto mb-3">
+            <i class="icon-mustache"></i>
+          </span>
+          <h4>
+            <strong>Income</strong>
+          </h4>
+          <p class="text-faded mb-0">how much the customer makes</p>
+        </div>
+        <div class="col-lg-3 col-md-6">
+            <span class="service-icon rounded-circle mx-auto mb-3">
+              <i class="icon-mustache"></i>
+            </span>
+            <h4>
+              <strong>Other Variables</strong>
+            </h4>
+            <p class="text-faded mb-0">Last 6 months Bill and Payment information</p>
+          </div>
+      </div>
+     <br/>
+    </div>
+
+  </section>
+
+
     <!-- Portfolio -->
     <section class="content-section" id="portfolio">
       <div class="container">
@@ -235,7 +216,7 @@
         </div>
         <div class="row no-gutters">
           <div class="col-lg-6">
-            <a class="portfolio-item" href="#">
+            <a class="portfolio-item" href="#portfolio">
               <span class="caption">
                 <span class="caption-content">
                   <h2>Stationary</h2>
@@ -246,7 +227,7 @@
             </a>
           </div>
           <div class="col-lg-6">
-            <a class="portfolio-item" href="#">
+            <a class="portfolio-item" href="#portfolio">
               <span class="caption">
                 <span class="caption-content">
                   <h2>Ice Cream</h2>
@@ -257,7 +238,7 @@
             </a>
           </div>
           <div class="col-lg-6">
-            <a class="portfolio-item" href="#">
+            <a class="portfolio-item" href="#portfolio">
               <span class="caption">
                 <span class="caption-content">
                   <h2>Strawberries</h2>
@@ -268,7 +249,7 @@
             </a>
           </div>
           <div class="col-lg-6">
-            <a class="portfolio-item" href="#">
+            <a class="portfolio-item" href="#portfolio">
               <span class="caption">
                 <span class="caption-content">
                   <h2>Workspace</h2>
@@ -281,7 +262,54 @@
         </div>
       </div>
     </section>
-   
+  
+    <section class="content-section bg-primary text-white" id="prediction">
+        <div class="content-section-heading text-center">
+            <h3 class="text-secondary mb-0">Predict the result</h3>
+            <h2 class="mb-5">Variables we input</h2>
+
+            <!-- prediction button  -->
+            <button type="button" class="btn btn-xl btn-light mr-4" data-toggle="modal" data-target="#ModalPredictionInput"> 
+              Start a prediction
+            </button>
+        </div>
+
+
+      <div class='container'>
+      <!-- Central Modal Medium Success -->
+        <div class="modal fade" id="ModalPredictionInput" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-notify modal-success" role="document">
+                <!--Content-->
+                <div class="modal-content">
+                    <!--Header-->
+                    <div class="modal-header">
+                        <p class="heading lead">Input a New Customer Profile</p>
+            
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true" class="white-text">&times;</span>
+                        </button>
+                    </div>
+            
+                    <!--Body-->
+                    <div class="modal-body">
+                        <div class="text-center">
+                            <i class="fa fa-check fa-4x mb-3 animated rotateIn"></i>
+                            <p>this is the placeholder to enter variables</p>
+                        </div>
+                    </div>
+            
+                    <!--Footer-->
+                    <div class="modal-footer justify-content-center">
+                        <a type="button" class="btn btn-xl btn-primary">Get the result<i class="fa fa-diamond ml-1"></i></a>
+                        <a type="button" class="btn btn-outline-success waves-effect" data-dismiss="modal">Close</a>
+                    </div>
+                </div>
+                <!--/.Content-->
+            </div>
+        </div>
+          <!-- Central Modal Medium Success-->
+      </div>     
+    </section>    
     <!-- this section is retired -->
     <!-- Call to Action -->
     <!-- <section class="content-section bg-primary text-white">
@@ -294,35 +322,42 @@
 
     <!-- Map -->
     <section id="contact" class="map">
-      <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" 
-      src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=McClintock+Ave,+Los+Angeles,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A&amp;output=embed"></iframe>
-      <br/>
-      <small>
-        <a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=McClintock+Ave,+Los+Angeles,+CA&amp;aq=0&amp;oq=twitter&amp;sll=4.0235569,-118.2902687&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A"></a>
-      </small>
+        <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="10" marginwidth="10" 
+        src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=McClintock+Ave,+Los+Angeles,+CA&amp;aq=0&amp;oq=Bootcamp USC&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A&amp;output=embed"></iframe>
+        <br/>
+        <small>
+          <a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=McClintock+Ave,+Los+Angeles,+CA&amp;aq=0&amp;oq=twitter&amp;sll=4.0235569,-118.2902687&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A"></a>
+        </small>
     </section>
+
+
+    <!-- the team -->
+    <section id="team" class="content-section">
+      <p>Teamates</p>
+    <ul>
+        * [Abulla Othow Othuw] *
+        <br/>
+        * [Alexandra Boonsook]
+        <br/>
+        * [Farai Mungofa]
+        * [Shanakay Brandford]
+        * [Stephen Wang]
+      </ul>
+    </section>
+
 
     <!-- Footer -->
     <footer class="footer text-center">
-      <div class="container">
-        <ul class="list-inline mb-5">
+      <div class="container text-center">
+        <ul class="list-inline mb-2">
           <li class="list-inline-item">
-            <a class="social-link rounded-circle text-white mr-3" href="#">
-              <i class="icon-social-facebook"></i>
+            <a class="social-link rounded-circle text-white" href="https://usc.bootcampcontent.com/fireproofsocks/fpg4">
+              <i class="fab fa-gitlab"></i>
             </a>
-          </li>
-          <li class="list-inline-item">
-            <a class="social-link rounded-circle text-white mr-3" href="#">
-              <i class="icon-social-twitter"></i>
-            </a>
-          </li>
-          <li class="list-inline-item">
-            <a class="social-link rounded-circle text-white" href="#">
-              <i class="icon-social-github"></i>
-            </a>
+            <em>GitLab Repository</em>  
           </li>
         </ul>
-        <p class="text-muted small mb-0">Copyright &copy; Your Website 2018</p>
+        <p class="text-muted small mb-0">Credit Card Prediction Model created during USC Data Science Bootcamp</p>
       </div>
     </footer>
 
@@ -330,6 +365,15 @@
     <a class="scroll-to-top rounded js-scroll-trigger" href="#page-top">
       <i class="fas fa-angle-up"></i>
     </a>
+
+
+    <!-- jquery -->
+    <script src="vendor/jQuery/jquery.min.js"></script>
+    <!-- the d3.js library -->
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    
+    <!-- custom scripts to draw D3 visualization charts -->
+    <script type="text/javascript" src="js/data_visual_draw.js"></script>
 
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
@@ -341,6 +385,8 @@
     <!-- Custom scripts for this template -->
     <script src="js/stylish-portfolio.min.js"></script>
 
+    <!-- add the reveal.js -->
+    <script src="js/reveal.js"></script>
   </body>
 
 </html>

@@ -1,5 +1,5 @@
 
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 import numpy as np
 import os
 #import sqlalchemy
@@ -13,11 +13,29 @@ from flask import Flask, jsonify
 import pymysql
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import text
+# load_dotenv()
 
 
-load_dotenv()
-app = Flask(__name__, static_folder='./static', static_url_path='')
 
+
+# reflect the tables
+# Base.prepare(engine, reflect=True)
+
+# # Save reference to the table
+# Household_Income = Base.classes.household_income_by_state_us
+# State_Revenue_Per_Capita=Base.classes.statesRevenue
+# # Create our session (link) from Python to the DB
+# session = Session(engine)
+
+#################################################
+# Flask Setup
+#################################################
+application = Flask(__name__, static_folder='./static', static_url_path='')
+# to make it work with AWS Elastic Beans
+app=application
+
+
+## set up the connection between AWS mysql with pymsql
 prefix=os.getenv("DATABASE_PREFIX")
 host=os.getenv("DATABASE_HOST")
 user=os.getenv("DATABASE_USERNAME")
@@ -26,10 +44,12 @@ port=int(os.getenv("DATABASE_PORT"))
 db=os.getenv("DATABASE_NAME")
 
 connection = pymysql.connect(host=host, user=user, passwd=password, db=db, port=port, cursorclass=pymysql.cursors.DictCursor)
-
 # Establish cursor. NOTE: This will be used to perform SQL queries (even in raw query form!)
 cursor = connection.cursor(pymysql.cursors.DictCursor)
+<<<<<<< HEAD
 
+=======
+>>>>>>> 67c06262b3ae4abc1f2636942afe1d328b021c72
 
 #################################################
 # Flask Routes
@@ -43,11 +63,30 @@ def welcome():
 def visuals():
     return render_template('visuals.html')    
 
+<<<<<<< HEAD
 #HYPOTHESIS 1: Men are more likely to experience a credit card default than women"(Pie Chart)
 @app.route('/default/bygender')
 def default_gender():
     connection = pymysql.connect(host=host, user=user, passwd=password, db=db, port=port, cursorclass=pymysql.cursors.DictCursor)
     cursor = connection.cursor(pymysql.cursors.DictCursor)
+=======
+@app.route("/presentation")
+def reveal_demo():
+    return render_template('slides_deck.html')
+
+@app.route("/api/gender")
+def api_fetch_data():
+    results=[]
+    sql_script="SELECT count(id) as Counts, (case when male =0 then 'female' else 'male' end ) as 'gender' FROM CreditCardDefault.credit_card_tbl group by male"
+    cursor.execute(sql_script)
+    for row in cursor:
+        results.append(row)
+    return jsonify(results)
+
+@app.route("/default/bygender")
+def default_gender():
+    
+>>>>>>> 67c06262b3ae4abc1f2636942afe1d328b021c72
     results = []
     cursor.execute("SELECT male, COUNT(male) as total_num_CC_default FROM CreditCardDefault.credit_card_tbl WHERE cc_default=1 GROUP BY male")
     print('Description: ', cursor.description)
@@ -73,6 +112,7 @@ def delaycc():
     # connection.close()
     return jsonify(results)
 
+<<<<<<< HEAD
 
 # HYPOTHESIS 3: Younger people are most like to experience a credit card default x-"age group", y-"number of accounts"(Bubble Chart)
 @app.route('/api/age_bal')
@@ -129,6 +169,10 @@ def billpayment():
     cursor.close()
     # connection.close()
     return jsonify(results)      
+=======
+    # cursor.close()
+    # connection.close()
+>>>>>>> 67c06262b3ae4abc1f2636942afe1d328b021c72
 
 cursor.close()
 connection.close()
