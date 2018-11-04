@@ -43,119 +43,152 @@ def welcome():
 def visuals():
     return render_template('visuals.html')    
 
+#HYPOTHESIS 1: Men are more likely to experience a credit card default than women"(Pie Chart)
 @app.route('/default/bygender')
 def default_gender():
+    connection = pymysql.connect(host=host, user=user, passwd=password, db=db, port=port, cursorclass=pymysql.cursors.DictCursor)
+    cursor = connection.cursor(pymysql.cursors.DictCursor)
     results = []
-    cursor.execute("SELECT male, COUNT(male) as total_num_CC_default FROM CreditCardDefault.credit_card_tbl WHERE cc_default=0 GROUP BY male")
+    cursor.execute("SELECT male, COUNT(male) as total_num_CC_default FROM CreditCardDefault.credit_card_tbl WHERE cc_default=1 GROUP BY male")
     print('Description: ', cursor.description)
     for row in cursor:
         print(row)
         results.append(row)
-    return jsonify(results)
     cursor.close()
-    connection.close()
-
-    
-   
-@app.route('/default/april_delays')
-def april():
-    results = []
-    cursor.execute("select pay_6 as months_delayed_since_April,count(pay_6) as number_of_accounts from CreditCardDefault.credit_card_tbl where cc_default = 0 group by pay_6")
-    for row in cursor:
-        print(row)
-        results.append(row)
+    # connection.close()
     return jsonify(results)
-    cursor.close()
-    connection.close()
-  
 
-@app.route('/default/may_delays')
-def may():
+#HYPOTHESIS 2: Age plays a factor in the amount of credit granted to an individual x-"age", y-"average credit amount granted"(Bubble Chart)
+@app.route('/api/age_bal')
+def delaycc():
+    connection = pymysql.connect(host=host, user=user, passwd=password, db=db, port=port, cursorclass=pymysql.cursors.DictCursor)
     cursor = connection.cursor(pymysql.cursors.DictCursor)
     results = []
-    cursor.execute("select pay_5 as months_delayed_since_May,count(pay_5) as number_of_accounts from CreditCardDefault.credit_card_tbl where cc_default = 0 group by pay_5")
+    cursor.execute("SELECT age, avg(limit_bal) as avg_credit_granted FROM CreditCardDefault.credit_card_tbl GROUP BY age")   
+    print('Description: ', cursor.description)
     for row in cursor:
         print(row)
         results.append(row)
-    return jsonify(results)
     cursor.close()
-    connection.close()
-
- 
-
+    # connection.close()
+    return jsonify(results)
 
 
-
-@app.route("/default/june_delays")
-def june():
+# HYPOTHESIS 3: Younger people are most like to experience a credit card default x-"age group", y-"number of accounts"(Bubble Chart)
+@app.route('/api/age_bal')
+def agecc():
+    connection = pymysql.connect(host=host, user=user, passwd=password, db=db, port=port, cursorclass=pymysql.cursors.DictCursor)
     cursor = connection.cursor(pymysql.cursors.DictCursor)
     results = []
-    cursor.execute("select pay_4 as months_delayed_since_June,count(pay_4) as number_of_accounts from CreditCardDefault.credit_card_tbl where cc_default = 0 group by pay_4")
+    cursor.execute("SELECT age, avg(limit_bal) as avg_credit_granted FROM CreditCardDefault.credit_card_tbl GROUP BY age")   
+    print('Description: ', cursor.description)
     for row in cursor:
         print(row)
         results.append(row)
-    return jsonify(results)
     cursor.close()
-    connection.close()
+    # connection.close()
+    return jsonify(results)    
 
 
-@app.route("/default/july_delays")
-def julydelays():
+
+@app.route('/population/summary')
+def population():
+    connection = pymysql.connect(host=host, user=user, passwd=password, db=db, port=port, cursorclass=pymysql.cursors.DictCursor)
     cursor = connection.cursor(pymysql.cursors.DictCursor)
     results = []
-    cursor.execute("select pay_3 as months_delayed_since_July,count(pay_3) as number_of_accounts from CreditCardDefault.credit_card_tbl where cc_default = 0 group by pay_3")
+    cursor.execute("select age, count(*) as number_of_records from CreditCardDefault.credit_card_tbl group by age")
     for row in cursor:
         print(row)
         results.append(row)
-    return jsonify(results)
     cursor.close()
-    connection.close()
-    
-    
-
-
-
-@app.route("/default/aug_delays")
-def august():
-    cursor = connection.cursor(pymysql.cursors.DictCursor)
-    results = []
-    cursor.execute("select pay_2 as months_delayed_since_Aug,count(pay_2) as number_of_accounts from CreditCardDefault.credit_card_tbl group by pay_2")
-    for row in cursor:
-        print(row)
-        results.append(row)
-    return jsonify(results)
-    cursor.close()
-    connection.close()
-   
-      
+    # connection.close()
+    return jsonify(results)     
 
 @app.route('/default/sept_delays')
 def september():
+    connection = pymysql.connect(host=host, user=user, passwd=password, db=db, port=port, cursorclass=pymysql.cursors.DictCursor)
     cursor = connection.cursor(pymysql.cursors.DictCursor)
     results = []
-    cursor.execute("select pay_1 as months_delayed_since_Sept,count(pay_1) as number_of_accounts from CreditCardDefault.credit_card_tbl where cc_default=0 group by pay_1")
+    cursor.execute("select pay_1 as months_delayed_since_Sept,count(pay_1) as number_of_accounts from CreditCardDefault.credit_card_tbl where cc_default=1 group by pay_1")
     for row in cursor:
         print(row)
         results.append(row)
-    return jsonify(results)  
     cursor.close()
-    connection.close()
+    # connection.close()
+    return jsonify(results)      
+    
 
+    
    
+# @app.route('/default/april_delays')
+# def april():
+#     results = []
+#     cursor.execute("select pay_6 as months_delayed_since_April,count(pay_6) as number_of_accounts from CreditCardDefault.credit_card_tbl where cc_default = 0 group by pay_6")
+#     for row in cursor:
+#         print(row)
+#         results.append(row)
+#     cursor.close()
+#     connection.close()
+#     return jsonify(results)
+    
+  
+
+# @app.route('/default/may_delays')
+# def may():
+#     cursor = connection.cursor(pymysql.cursors.DictCursor)
+#     results = []
+#     cursor.execute("select pay_5 as months_delayed_since_May,count(pay_5) as number_of_accounts from CreditCardDefault.credit_card_tbl where cc_default = 0 group by pay_5")
+#     for row in cursor:
+#         print(row)
+#         results.append(row)
+#     cursor.close()
+#     connection.close()
+#     return jsonify(results)
 
 
-@app.route("/sum/delayPayment/byage")
-def delaycc():
-    cursor = connection.cursor(pymysql.cursors.DictCursor)
-    results = []
-    cursor.execute("SELECT age, sum(limit_bal) as cc_limit,sum(pay_1)as Sept_AvgDelay, sum(pay_2) as Aug_avgDelay, sum(pay_3) as July_avgDelay,sum(pay_4)as June_avgDelay, sum(pay_5) as May_avgDelay, sum(pay_6) as April_AvgDeliquency FROM CreditCardDefault.credit_card_tbl GROUP BY age")   
-    print('Description: ', cursor.description)
-    for row in cursor:
-        print(row)
-        results.append(row)
-    return jsonify(results)
+
+# @app.route("/default/june_delays")
+# def june():
+#     cursor = connection.cursor(pymysql.cursors.DictCursor)
+#     results = []
+#     cursor.execute("select pay_4 as months_delayed_since_June,count(pay_4) as number_of_accounts from CreditCardDefault.credit_card_tbl where cc_default = 0 group by pay_4")
+#     for row in cursor:
+#         print(row)
+#         results.append(row)
+#     cursor.close()
+#     connection.close()    
+#     return jsonify(results)
+    
+
+# @app.route("/default/july_delays")
+# def julydelays():
+#     cursor = connection.cursor(pymysql.cursors.DictCursor)
+#     results = []
+#     cursor.execute("select pay_3 as months_delayed_since_July,count(pay_3) as number_of_accounts from CreditCardDefault.credit_card_tbl where cc_default = 0 group by pay_3")
+#     for row in cursor:
+#         print(row)
+#         results.append(row)
+#     cursor.close()
+#     connection.close()
+#     return jsonify(results)
+    
+    
+    
+# @app.route("/default/aug_delays")
+# def august():
+#     cursor = connection.cursor(pymysql.cursors.DictCursor)
+#     results = []
+#     cursor.execute("select pay_2 as months_delayed_since_Aug,count(pay_2) as number_of_accounts from CreditCardDefault.credit_card_tbl group by pay_2")
+#     for row in cursor:
+#         print(row)
+#         results.append(row)
+#     cursor.close()
+#     connection.close()
+#     return jsonify(results)
+       
+
     cursor.close()
     connection.close()
-
+   
 if __name__ == '__main__':
     app.run(debug=True)
