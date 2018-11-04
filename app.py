@@ -109,7 +109,7 @@ def september():
     connection = pymysql.connect(host=host, user=user, passwd=password, db=db, port=port, cursorclass=pymysql.cursors.DictCursor)
     cursor = connection.cursor(pymysql.cursors.DictCursor)
     results = []
-    cursor.execute("select pay_1 as months_delayed_since_Sept,count(pay_1) as number_of_accounts from CreditCardDefault.credit_card_tbl where cc_default=1 group by pay_1")
+    cursor.execute("select pay_1 as months_delayed_since_Sept,count(pay_1) as number_of_accounts from CreditCardDefault.credit_card_tbl where pay_1>0 group by pay_1")
     for row in cursor:
         print(row)
         results.append(row)
@@ -117,78 +117,21 @@ def september():
     # connection.close()
     return jsonify(results)      
     
-
-    
-   
-# @app.route('/default/april_delays')
-# def april():
-#     results = []
-#     cursor.execute("select pay_6 as months_delayed_since_April,count(pay_6) as number_of_accounts from CreditCardDefault.credit_card_tbl where cc_default = 0 group by pay_6")
-#     for row in cursor:
-#         print(row)
-#         results.append(row)
-#     cursor.close()
-#     connection.close()
-#     return jsonify(results)
-    
-  
-
-# @app.route('/default/may_delays')
-# def may():
-#     cursor = connection.cursor(pymysql.cursors.DictCursor)
-#     results = []
-#     cursor.execute("select pay_5 as months_delayed_since_May,count(pay_5) as number_of_accounts from CreditCardDefault.credit_card_tbl where cc_default = 0 group by pay_5")
-#     for row in cursor:
-#         print(row)
-#         results.append(row)
-#     cursor.close()
-#     connection.close()
-#     return jsonify(results)
-
-
-
-# @app.route("/default/june_delays")
-# def june():
-#     cursor = connection.cursor(pymysql.cursors.DictCursor)
-#     results = []
-#     cursor.execute("select pay_4 as months_delayed_since_June,count(pay_4) as number_of_accounts from CreditCardDefault.credit_card_tbl where cc_default = 0 group by pay_4")
-#     for row in cursor:
-#         print(row)
-#         results.append(row)
-#     cursor.close()
-#     connection.close()    
-#     return jsonify(results)
-    
-
-# @app.route("/default/july_delays")
-# def julydelays():
-#     cursor = connection.cursor(pymysql.cursors.DictCursor)
-#     results = []
-#     cursor.execute("select pay_3 as months_delayed_since_July,count(pay_3) as number_of_accounts from CreditCardDefault.credit_card_tbl where cc_default = 0 group by pay_3")
-#     for row in cursor:
-#         print(row)
-#         results.append(row)
-#     cursor.close()
-#     connection.close()
-#     return jsonify(results)
-    
-    
-    
-# @app.route("/default/aug_delays")
-# def august():
-#     cursor = connection.cursor(pymysql.cursors.DictCursor)
-#     results = []
-#     cursor.execute("select pay_2 as months_delayed_since_Aug,count(pay_2) as number_of_accounts from CreditCardDefault.credit_card_tbl group by pay_2")
-#     for row in cursor:
-#         print(row)
-#         results.append(row)
-#     cursor.close()
-#     connection.close()
-#     return jsonify(results)
-       
-
+@app.route('/bill/payment')
+def billpayment():
+    connection = pymysql.connect(host=host, user=user, passwd=password, db=db, port=port, cursorclass=pymysql.cursors.DictCursor)
+    cursor = connection.cursor(pymysql.cursors.DictCursor)
+    results = []
+    cursor.execute("select sum(bill_amt1) as a_Sept, sum(bill_amt2) as b_Aug,sum(bill_amt3) as c_July,sum(bill_amt4) as d_June,sum(bill_amt5) as e_May,sum(bill_amt6) as f_April,sum(pay_amt1) as g_Sept,sum(pay_amt2) as h_Aug,sum(pay_amt3) as i_July,sum(pay_amt4) as j_June,sum(pay_amt5) as k_May,sum(pay_amt6) as l_April from CreditCardDefault.credit_card_tbl")
+    for row in cursor:
+        print(row)
+        results.append(row)
     cursor.close()
-    connection.close()
+    # connection.close()
+    return jsonify(results)      
+
+cursor.close()
+connection.close()
    
 if __name__ == '__main__':
     app.run(debug=True)
