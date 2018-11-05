@@ -28,6 +28,9 @@ function byGender(){
       labels: gender,
       hovertext: gender,
       hoverinfo: "hovertext",
+      marker:{
+        colors: ['#E1396C','#96D38C']
+      },
       type: "pie"
     }
   ];
@@ -146,13 +149,13 @@ function pop_sum(){
   });
 }
 
-function bill_sum(){
+function bill_summary(){
   d3.json(plot_bill).then((data)=>{
   console.log(data)
 
   const bill_amt = [];
   const pay_amt = [];
-  const months = [['September', 'August', 'July', 'June', 'May', 'April']];
+  const months = ['September', 'August', 'July', 'June', 'May', 'April'];
 
   for(var i=0;i<data.length;i++)
   {
@@ -162,10 +165,7 @@ function bill_sum(){
     bill_amt.push(data[i]['d_June'])//June_bill
     bill_amt.push(data[i]['e_May'])//May_bill
     bill_amt.push(data[i]['f_April'])//Apr_bill
-  }
-  console.log(bill_amt);
 
-  for(vari=0;i<data.length;i++){
     pay_amt.push(data[i]['g_Sept'])//Sept_pay'
     pay_amt.push(data[i]['h_Aug'])//Aug_pay
     pay_amt.push(data[i]['i_July'])//July_pay
@@ -174,8 +174,12 @@ function bill_sum(){
     pay_amt.push(data[i]['l_April'])//Apr_pay
   }
   console.log(pay_amt);
+  console.log(bill_amt);
 
   var layout = {
+    barmode:'group',
+    bargap: 0.15,
+    bargroupgap: 0.1,
     margin:{t:35},
     titleposition:'middle center',
     title: 'Credit Card Bill Statement vs Credit Card Payment',
@@ -185,29 +189,25 @@ function bill_sum(){
     yaxis:{title:"Bill Statement / Bill Payment"}
   };
 
-  var data1 = [{
+  var trace1 = {
     x: months,
     y: bill_amt, 
-    type: 'bar',
-    //mode: "markers",
-    marker: {
-      color:'green'
-    }
-  }];
+    name:'Bill Statement',
+    marker: {color: 'rgb(158, 202, 225)'},
+    type: 'bar'
+  };
 
-  var data2 = [{
+  var trace2 = {
     x: months,
     y: pay_amt, 
-    type: 'bar',
-    //mode: "markers",
-    marker: {
-      color: 'red'
-    }
-  }];
+    name: 'Pay Amount',
+    marker: {color: 'rgb(58, 200, 225)'},
+    type: 'bar'
+  };
 
-  //var data = [data1, data2]
+  var data = [trace1, trace2];
 
-  Plotly.newPlot("bubble", data1, layout);
+  Plotly.newPlot("bar_a", data, layout);
   });
 }
 
@@ -218,35 +218,7 @@ function bill_sum(){
    sept_delayedPayments();
    plotAge();
    pop_sum();
-   bill_sum();
+   bill_summary();
  }
 
  init();
-
-
-
-
-
-
-//   var pielayout = {
-//     margin:{t:0, l:0}
-//    }
- 
-//    var data = [{
-//     values: male.slice(0,len(num_recs)),
-//     labels: num_recs.slice(0,len(num_recs)), 
-//     hovertext: num_recs.slice(0,len(num_recs)),
-//     hover_info: "hovertext",
-//     type:'pie'
-//    }];
-//    Plotly.newPlot("pie", data,pielayout);
-//  });
-//  }
-
-
-
-//  function init() {
-
-//       byGender();
-//  }
-//  init();
