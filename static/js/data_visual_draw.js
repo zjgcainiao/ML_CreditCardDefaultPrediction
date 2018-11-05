@@ -1,8 +1,4 @@
-
-$("#ModalPredictionInput").on('show.bs.modal', function(){
-    alert("Hello World!");
-  });
-
+$('h3.text-secondary mb-0:empty').hide();
 
   // to display the graphic pictures
   var svgWidth=800,svgHeight =600;
