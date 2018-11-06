@@ -85,7 +85,7 @@ def welcome():
     
     return render_template('index.html',prediction_result=prediction_result, prediction_section_title=prediction_section_title)
 
-@app.route("/visuals")
+@app.route('/visuals')
 def visuals():
     return render_template('visuals.html')    
 
@@ -106,40 +106,36 @@ def api_fetch_data():
 def default_gender():
     
     results = []
-    cursor.execute("SELECT male, COUNT(male) as total_num_CC_default FROM CreditCardDefault.credit_card_tbl GROUP BY male")
+    cursor.execute("SELECT male, COUNT(male) as total_num_CC_default FROM CreditCardDefault.credit_card_tbl WHERE cc_default=1 GROUP BY male")
     print('Description: ', cursor.description)
     for row in cursor:
         print(row)
         results.append(row)
+    cursor.close()
+    # connection.close()
+    return jsonify(results)
+
+#HYPOTHESIS 2: Age plays a factor in the amount of credit granted to an individual x-"age", y-"average credit amount granted"(Bubble Chart)
+@app.route('/api/age_bal')
+def delaycc():
+    connection = pymysql.connect(host=host, user=user, passwd=password, db=db, port=port, cursorclass=pymysql.cursors.DictCursor)
+    cursor = connection.cursor(pymysql.cursors.DictCursor)
+    results = []
+    cursor.execute("SELECT age, avg(limit_bal) as avg_credit_granted FROM CreditCardDefault.credit_card_tbl GROUP BY age")   
+    print('Description: ', cursor.description)
+    for row in cursor:
+        print(row)
+        results.append(row)
+    cursor.close()
+    # connection.close()
     return jsonify(results)
 
     # cursor.close()
     # connection.close()
 
-@app.route('/#prediction', methods=['POST'])
-def process_input_data():
-    print(request.form)
-    
-
-        # prepare for the prediction
-
-    new_customer = OrderedDict([('limit_bal', 4000), ('age', 50), ('bill_amt1', 500),
-    ('bill_amt2', 35509), ('bill_amt3', 689), ('bill_amt4', 0),
-    ('bill_amt5', 0), ('bill_amt6', 0), ('pay_amt1', 0),('pay_amt2', 35509),
-    ('pay_amt3', 0), ('pay_amt4', 0), ('pay_amt5', 0), ('pay_amt6', 0),
-    ('male', 1), ('grad_school', 0), ('university', 1), ('hight_school', 0),
-    ('married', 1), ('pay_1', -1), ('pay_2', -1), ('pay_3', -1),
-    ('pay_4', 0), ('pay_5', -1)
-                                , ('pay_6', 0)])
-
-    new_customer_series = pd.Series(new_customer)
-    prediction_result=customer_prediction_func(new_customer)
-    # age=+request.form['age']
-    # your code
-    # return a response
-    # return 
-    return render_template('index.html#prediction',prediction_result=prediction_result)
-
+cursor.close()
+connection.close()
+   
 if __name__ == '__main__':
     app.run(debug=True)
 

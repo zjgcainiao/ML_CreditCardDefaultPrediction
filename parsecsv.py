@@ -46,7 +46,7 @@ CREATE TABLE `CreditCardDefault`.`credit_card_tbl` (
   `pay_amt4` INT(11),
   `pay_amt5` INT(11),
   `pay_amt6` INT(11),
-  `default` INT(11),
+  `cc_default` INT(11),
   `grad_school` INT(11),
   `university` INT(11),
   `high_school` INT(11),
@@ -85,7 +85,7 @@ for row in csv_data:
   pay_amt4 = row[18]
   pay_amt5 = row[19]
   pay_amt6 = row[20]
-  default = row[21]
+  cc_default = row[21]
   grad_school = row[22]
   university = row[23]
   high_school = row[24]
@@ -100,9 +100,9 @@ for row in csv_data:
   print(row)
   
   insert_statement = """INSERT INTO credit_card_tbl
-(`limit_bal`, `age`, `pay_1`, `pay_2`, `pay_3`,`pay_4`, `pay_5`,`pay_6`,`bill_amt1`,`bill_amt2`,`bill_amt3`,`bill_amt4`,`bill_amt5`,`bill_amt6`,`pay_amt1`, `pay_amt2`,`pay_amt3`,`pay_amt4`,`pay_amt5`,`pay_amt6`, `default`,`grad_school`, `university`, `high_school`, `male`, `married`)
+(`limit_bal`, `age`, `pay_1`, `pay_2`, `pay_3`,`pay_4`, `pay_5`,`pay_6`,`bill_amt1`,`bill_amt2`,`bill_amt3`,`bill_amt4`,`bill_amt5`,`bill_amt6`,`pay_amt1`, `pay_amt2`,`pay_amt3`,`pay_amt4`,`pay_amt5`,`pay_amt6`, `cc_default`,`grad_school`, `university`, `high_school`, `male`, `married`)
 VALUES
-(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)""" % (limit_bal, age, pay_1, pay_2, pay_3,pay_4,pay_5,pay_6,bill_amt1,bill_amt2,bill_amt3,bill_amt4,bill_amt5,bill_amt6,pay_amt1, pay_amt2,pay_amt3,pay_amt4,pay_amt5,pay_amt6, default,grad_school,university,high_school,male,married)
+(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)""" % (limit_bal, age, pay_1, pay_2, pay_3,pay_4,pay_5,pay_6,bill_amt1,bill_amt2,bill_amt3,bill_amt4,bill_amt5,bill_amt6,pay_amt1, pay_amt2,pay_amt3,pay_amt4,pay_amt5,pay_amt6,cc_default,grad_school,university,high_school,male,married)
 
 
 #print(insert_statement)
