@@ -52,7 +52,7 @@ h6 {
 
 @media (max-width: 992px) {
   .map {
-    height: 75%;
+    height: 80%;
   }
 }
 
@@ -291,8 +291,8 @@ h6 {
     clip-path: inset(-1px);
   }
   .portfolio-item:hover img {
-    -webkit-clip-path: inset(2rem);
-    clip-path: inset(2rem);
+    -webkit-clip-path: inset(20rem);
+    clip-path: inset(20rem);
   }
   .portfolio-item:hover .caption {
     background-color: rgba(29, 128, 159, 0.9);
