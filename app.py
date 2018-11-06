@@ -1,4 +1,6 @@
 
+# from dotenv import load_dotenv
+
 import numpy as np
 import pandas as pd
 import os
@@ -12,8 +14,11 @@ from flask import render_template
 from flask import Flask, jsonify,request
 import pymysql
 from collections import OrderedDict
-from core_ML_logic import customer_prediction_func,convertStr
-# load_dotenv()
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy import text
+from core_ML_logic import customer_prediction_func
+
+
 
 #################################################
 # Flask Setup
@@ -23,7 +28,7 @@ application = Flask(__name__, static_folder='./static', static_url_path='')
 app=application
 
 
-## set up the connection between AWS mysql with pymsql
+
 prefix=os.getenv("DATABASE_PREFIX")
 host=os.getenv("DATABASE_HOST")
 user=os.getenv("DATABASE_USERNAME")
@@ -35,6 +40,7 @@ connection = pymysql.connect(host=host, user=user, passwd=password, db=db, port=
 
 # Establish cursor. NOTE: This will be used to perform SQL queries (even in raw query form!)
 cursor = connection.cursor(pymysql.cursors.DictCursor)
+
 
 #################################################
 # Flask Routes
@@ -75,8 +81,8 @@ def welcome():
         ('bill_amt2', avg_bill_amt), ('bill_amt3', avg_bill_amt), ('bill_amt4', avg_bill_amt),
         ('bill_amt5', avg_bill_amt), ('bill_amt6', avg_bill_amt), ('pay_amt1', avg_pay_amt),('pay_amt2', avg_pay_amt),
         ('pay_amt3', avg_pay_amt), ('pay_amt4', avg_pay_amt), ('pay_amt5',avg_pay_amt), ('pay_amt6', avg_pay_amt),
-        ('male', ismarried), ('grad_school', grad_school), ('university', university), ('hight_school', hight_school),
-        ('married', repayment_status), ('pay_1', repayment_status), ('pay_2', repayment_status), ('pay_3', repayment_status),
+        ('male', gender), ('grad_school', grad_school), ('university', university), ('hight_school', hight_school),
+        ('married', ismarried), ('pay_1', repayment_status), ('pay_2', repayment_status), ('pay_3', repayment_status),
         ('pay_4', repayment_status), ('pay_5', repayment_status), ('pay_6', repayment_status)])
 
         new_customer_series = pd.Series(new_customer)
@@ -87,27 +93,25 @@ def welcome():
 
 @app.route('/visuals')
 def visuals():
-    return render_template('visuals.html')    
-
-
+    return render_template('visuals.html') 
 @app.route("/presentation")
 def reveal_demo():
     return render_template('slides_deck.html')
 
 
+
 #HYPOTHESIS 1: Men are more likely to experience a credit card default than women"(Pie Chart)
 @app.route('/default/bygender')
 def default_gender():
-    connection = pymysql.connect(host=host, user=user, passwd=password, db=db, port=port, cursorclass=pymysql.cursors.DictCursor)
-    cursor = connection.cursor(pymysql.cursors.DictCursor)
+
     results = []
     cursor.execute("SELECT male, COUNT(male) as total_num_CC_default FROM CreditCardDefault.credit_card_tbl WHERE cc_default=1 GROUP BY male")
     print('Description: ', cursor.description)
     for row in cursor:
         print(row)
         results.append(row)
-    cursor.close()
-    connection.close()
+    # cursor.close()
+    # connection.close()
     return jsonify(results)
 
 #HYPOTHESIS 2: Age plays a factor in the amount of credit granted to an individual x-"age", y-"average credit amount granted"(Bubble Chart)
@@ -121,8 +125,8 @@ def delaycc():
     for row in cursor:
         print(row)
         results.append(row)
-    cursor.close()
-    connection.close()
+    # cursor.close()
+    # connection.close()
     return jsonify(results)
 
 
@@ -137,8 +141,8 @@ def agecc():
     for row in cursor:
         print(row)
         results.append(row)
-    cursor.close()
-    connection.close()
+    # cursor.close()
+    # connection.close()
     return jsonify(results)    
 
 
@@ -152,7 +156,7 @@ def population():
     for row in cursor:
         print(row)
         results.append(row)
-    cursor.close()
+    # cursor.close()
     # connection.close()
     return jsonify(results)     
 
@@ -165,7 +169,7 @@ def september():
     for row in cursor:
         print(row)
         results.append(row)
-    cursor.close()
+    # cursor.close()
     # connection.close()
     return jsonify(results)      
     
@@ -178,11 +182,14 @@ def billpayment():
     for row in cursor:
         print(row)
         results.append(row)
-    cursor.close()
+    # cursor.close()
     # connection.close()
-    return jsonify(results)      
+    return jsonify(results)    
+
+    # cursor.close()
+    # connection.close()
+
 
    
 if __name__ == '__main__':
     app.run(debug=True)
-
