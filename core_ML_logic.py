@@ -9,9 +9,10 @@ from sklearn.metrics import accuracy_score, recall_score, precision_score, confu
 from sklearn.preprocessing import RobustScaler
 from sklearn.linear_model import LogisticRegression
 
-def customer_prediction_func(new_data_orderedDict,input_dataset_path):
+def customer_prediction_func(new_data_orderedDict):
     # get the data from locally store json file 
     # the dataset is alo reside in the AWS mysql db. see .env file
+    input_dataset_path='cleaned_creditcard.json'
     credit_default=pd.read_json(input_dataset_path)
 
     # Our dependent feature or target(respondent) variable will the `default` column (y)
