@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 from dotenv import load_dotenv
+=======
+
+>>>>>>> a233a10163c5390dda2e79208edc9386453f1c59
 import numpy as np
+import pandas as pd
 import os
 #import sqlalchemy
 from sqlalchemy import Column, Integer, String, Float
@@ -10,6 +15,7 @@ from sqlalchemy import create_engine, func
 from flask import render_template
 from flask import Flask, jsonify
 import pymysql
+<<<<<<< HEAD
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import text
 
@@ -17,6 +23,21 @@ from sqlalchemy import text
 load_dotenv()
 app = Flask(__name__, static_folder='./static', static_url_path='')
 
+=======
+from collections import OrderedDict
+from core_ML_logic import customer_prediction_func,convertStr
+# load_dotenv()
+
+#################################################
+# Flask Setup
+#################################################
+application = Flask(__name__, static_folder='./static', static_url_path='')
+# to make it work with AWS Elastic Beans
+app=application
+
+
+## set up the connection between AWS mysql with pymsql
+>>>>>>> a233a10163c5390dda2e79208edc9386453f1c59
 prefix=os.getenv("DATABASE_PREFIX")
 host=os.getenv("DATABASE_HOST")
 user=os.getenv("DATABASE_USERNAME")
@@ -28,7 +49,10 @@ connection = pymysql.connect(host=host, user=user, passwd=password, db=db, port=
 
 # Establish cursor. NOTE: This will be used to perform SQL queries (even in raw query form!)
 cursor = connection.cursor(pymysql.cursors.DictCursor)
+<<<<<<< HEAD
 
+=======
+>>>>>>> a233a10163c5390dda2e79208edc9386453f1c59
 
 #################################################
 # Flask Routes
@@ -36,12 +60,66 @@ cursor = connection.cursor(pymysql.cursors.DictCursor)
 
 @app.route('/')
 def welcome():
+<<<<<<< HEAD
     return render_template('index.html')
+=======
+    # input_dataset_path='cleaned_creditcard.json'
+    prediction_result=''
+    prediction_section_title=''
+    if request.method=='POST':
+        age=request.form.get('age')
+        if age=='':
+            age=29
+        cc_limit_balance=int(float(request.form.get('cc_limit_balance')))
+        gender=int(float(request.form['gender']))
+        education=int(float(request.form['education']))
+        if education==1:
+            grad_school=0
+            university=0
+            hight_school=1
+        elif education==2:
+            grad_school=0
+            university=1
+            hight_school=0
+        else:
+            grad_school=0
+            university=9
+            hight_school=1
+        ismarried=request.form['ismarried']  
+        avg_bill_amt=float(request.form['avg_bill_amt'])
+        avg_pay_amt=float(request.form['avg_pay_amt'])
+        repayment_status=request.form['repayment_status']    
+
+
+        # assume the avg_bill_amt equals the bill_amt_5 to bill_amt6
+        new_customer = OrderedDict([('limit_bal', cc_limit_balance), ('age', age), ('bill_amt1', avg_bill_amt),
+        ('bill_amt2', avg_bill_amt), ('bill_amt3', avg_bill_amt), ('bill_amt4', avg_bill_amt),
+        ('bill_amt5', avg_bill_amt), ('bill_amt6', avg_bill_amt), ('pay_amt1', avg_pay_amt),('pay_amt2', avg_pay_amt),
+        ('pay_amt3', avg_pay_amt), ('pay_amt4', avg_pay_amt), ('pay_amt5',avg_pay_amt), ('pay_amt6', avg_pay_amt),
+        ('male', ismarried), ('grad_school', grad_school), ('university', university), ('hight_school', hight_school),
+        ('married', repayment_status), ('pay_1', repayment_status), ('pay_2', repayment_status), ('pay_3', repayment_status),
+        ('pay_4', repayment_status), ('pay_5', repayment_status), ('pay_6', repayment_status)])
+
+        new_customer_series = pd.Series(new_customer)
+        prediction_result=customer_prediction_func(new_customer_series)
+        prediction_section_title='The Prediction Result'
+    
+    return render_template('index.html',prediction_result=prediction_result, prediction_section_title=prediction_section_title)
+>>>>>>> a233a10163c5390dda2e79208edc9386453f1c59
 
 @app.route('/visuals')
 def visuals():
     return render_template('visuals.html')    
 
+<<<<<<< HEAD
+=======
+
+@app.route("/presentation")
+def reveal_demo():
+    return render_template('slides_deck.html')
+
+
+>>>>>>> a233a10163c5390dda2e79208edc9386453f1c59
 #HYPOTHESIS 1: Men are more likely to experience a credit card default than women"(Pie Chart)
 @app.route('/default/bygender')
 def default_gender():
@@ -54,7 +132,11 @@ def default_gender():
         print(row)
         results.append(row)
     cursor.close()
+<<<<<<< HEAD
     # connection.close()
+=======
+    connection.close()
+>>>>>>> a233a10163c5390dda2e79208edc9386453f1c59
     return jsonify(results)
 
 #HYPOTHESIS 2: Age plays a factor in the amount of credit granted to an individual x-"age", y-"average credit amount granted"(Bubble Chart)
@@ -69,7 +151,11 @@ def delaycc():
         print(row)
         results.append(row)
     cursor.close()
+<<<<<<< HEAD
     # connection.close()
+=======
+    connection.close()
+>>>>>>> a233a10163c5390dda2e79208edc9386453f1c59
     return jsonify(results)
 
 
@@ -85,7 +171,7 @@ def agecc():
         print(row)
         results.append(row)
     cursor.close()
-    # connection.close()
+    connection.close()
     return jsonify(results)    
 
 
@@ -129,8 +215,15 @@ def billpayment():
     # connection.close()
     return jsonify(results)      
 
+<<<<<<< HEAD
 cursor.close()
 connection.close()
    
 if __name__ == '__main__':
     app.run(debug=True)
+=======
+   
+if __name__ == '__main__':
+    app.run(debug=True)
+
+>>>>>>> a233a10163c5390dda2e79208edc9386453f1c59
