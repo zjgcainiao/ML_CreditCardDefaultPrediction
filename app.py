@@ -16,16 +16,6 @@ from collections import OrderedDict
 from core_ML_logic import customer_prediction_func,convertStr
 # load_dotenv()
 
-
-# reflect the tables
-# Base.prepare(engine, reflect=True)
-
-# # Save reference to the table
-# Household_Income = Base.classes.household_income_by_state_us
-# State_Revenue_Per_Capita=Base.classes.statesRevenue
-# # Create our session (link) from Python to the DB
-# session = Session(engine)
-
 #################################################
 # Flask Setup
 #################################################

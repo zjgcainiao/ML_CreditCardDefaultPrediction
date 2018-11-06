@@ -273,7 +273,7 @@
             <a class="portfolio-item" href="#portfolio" data-toggle="modal" data-target="#model_step_2">
               <span class="caption">
                 <span class="caption-content">
-                  <h2>Step 2: Confusion Matrixes</h2>
+                  <h1>Step 2: Confusion Matrixes</h1>
                   <p class="mb-0">A dark blue background with a colored pencil, a clip, and a tiny ice cream cone!</p>
                 </span>
               </span>
@@ -325,10 +325,10 @@
                                 </table>
                             </div>
                             <h5 class='mb-3'>Decision Tree Model</h5>
-                            <div class='table-responsive'>
+                            <div class='table-responsive-sm'>
                                 <table class="table table-sm">
                                     <thead>
-                                      <tr style="text-align: right;">
+                                      <tr>
                                         <th>Prediction/Acutal</th>
                                         <th>non-default</th>
                                         <th>default</th>
@@ -369,7 +369,7 @@
             <a class="portfolio-item" href="#portfolio" data-toggle="modal" data-target="#model_step_3">
               <span class="caption">
                 <span class="caption-content">
-                  <h2>Performance Tracking</h2>
+                  <h1>Step 3: Performance Tracking</h1>
                   <p class="mb-0">Based on the Confusion Matrixes, we evaluate the accuracy of models' prediction</p>
                 </span>
               </span>
@@ -427,6 +427,15 @@
                                 </tbody>
                               </table>
                             </div>
+                            <h4>Other Metrics</h4>
+                            <p>We can see from the graph that at the recall value shown by the stright line, LogisticReg Model is higher value than NavieBayes model.
+                                So Logistic is the better model to predict the default as compare to NaiveBayes</p>
+                            <img class='img-fluid' src='img/precision-recall-curve.png'>
+                            <br/>
+                            <img class='img-fluid' src='img/logistic_regression_classifire_precision_Recall_curve.png'>
+                            <p>From the above graph, we can see that we can adjust the Recall to be better that Percision by changing the classification threshold.
+                                ### Classifier with threshold of 0.2</p>
+
                       </div>
                       
                   </div>
@@ -439,7 +448,7 @@
             <a class="portfolio-item" href="#portfolio" data-toggle="modal" data-target="#model_step_4">
               <span class="caption">
                 <span class="caption-content">
-                  <h2>A quick peek</h2>
+                  <h1>A quick peek at the coding</h1>
                   <p class="mb-0">Display partical codes to create a ML model</p>
                 </span>
               </span>
