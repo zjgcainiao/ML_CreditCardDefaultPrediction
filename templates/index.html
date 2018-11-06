@@ -23,7 +23,8 @@
 
     <!-- template CSS -->
     <link href="css/stylish-portfolio.min.css" rel="stylesheet">
-
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
     <!-- custom main style css -->
     <link href='css/mainstyle.css' rel='stylesheet'>
   </head>
@@ -43,19 +44,22 @@
           <a class="js-scroll-trigger" href="#page-top">Home</a>
         </li>
         <li class="sidebar-nav-item">
-          <a class="js-scroll-trigger" href="#about">About</a>
+          <a class="js-scroll-trigger" href="#description">Description</a>
+        </li>
+        <li class="sidebar-nav-item">
+          <a class="js-scroll-trigger" href="#variables">Variables</a>
         </li>
         <li class="sidebar-nav-item">
             <a class="js-scroll-trigger" href="#datavisualization">Data Visualization</a>
+          </li>
+        <li class="sidebar-nav-item">
+          <a class="js-scroll-trigger" href="#mlmodels">ML Models</a>
         </li>
         <li class="sidebar-nav-item">
-          <a class="js-scroll-trigger" href="#mlModels">ML Models</a>
-        </li>
+            <a class="js-scroll-trigger" href="#prediction">Predictions</a>
+          </li>        
         <li class="sidebar-nav-item">
-          <a class="js-scroll-trigger" href="#portfolio">Portfolio</a>
-        </li>
-        <li class="sidebar-nav-item">
-          <a class="js-scroll-trigger" href="#Team">Team</a>
+          <a class="js-scroll-trigger" href="#team">Team</a>
         </li>
       </ul>
     </nav>
@@ -67,39 +71,111 @@
         <h3 class="mb-5">
           <em>Machine Learning Neutral Network Model</em>
         </h3>
-        <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Find Out More</a>
+        <a class="btn btn-primary btn-xl js-scroll-trigger" href="#description">Get Started</a>
       </div>
       <div class="overlay"></div>
     </header>
 
-    <!-- About -->
-    <section class="content-section bg-light" id="about">
+    <!-- Project Description -->
+    <section class="content-section bg-light" id="description">
       <div class="container text-center">
         <div class="row">
           <div class="col-lg-10 mx-auto">
             <h2>Based on the 24 variables, we create a neutral netork to predict a customer's default likehood.</h2>
             <p class="lead mb-5">Our team collects information from more than 30,000 customers.
               </p>
-            <a class="btn btn-dark btn-xl js-scroll-trigger" href="#datavisualization">Next</a>
+            <a class="btn btn-dark btn-xl js-scroll-trigger" href="#variables">Next</a>
           </div>
         </div>
       </div>
     </section>
 
-   
 
-    <section class="content-section bg-primary text-secondary" id="datavisualization">
+    <!-- <section class="content-section bg-primary text-secondary" id="datavisualization">
         <div class="container text-center my-auto">
           <div class="content-section-heading text-center">
             <h3 class="text-secondary mb-0">Data Visualization Placeholder</h3>
             <h2 class="mb-5">How the dataset looks like</h2>
           </div>
         </div>
-      </section>
+      </section> -->
+
+<!-- Variables in the dataset -->
+<section class="content-section bg-primary text-white text-center" id="variables">
+    <div class="container text-center">
+      <div class="content-section-heading">
+        <h3 class="text-secondary mb-0">Look at the dataset</h3>
+        <h2 class="mb-5">How the dataset looks like</h2>
+      </div>
+      <div class="row">
+        <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+          <span class="service-icon rounded-circle mx-auto mb-3">
+            <i class="icon-screen-smartphone"></i>
+          </span>
+          <h4>
+            <strong>Age</strong>
+          </h4>
+          <p class="text-faded mb-0">Customer's age</p>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+          <span class="service-icon rounded-circle mx-auto mb-3">
+            <i class="icon-pencil"></i>
+          </span>
+          <h4>
+            <strong>Gender</strong>
+          </h4>
+          <p class="text-faded mb-0">whether a customer is a female or male.</p>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-5 mb-md-0">
+          <span class="service-icon rounded-circle mx-auto mb-3">
+            <i class="icon-like"></i>
+          </span>
+          <h4>
+            <strong>Credit Card Limit Balance</strong>
+          </h4>
+          <p class="text-faded mb-0">The maximum amount of the cutomer's credit crad line
+            <i class="fas fa-dollar-sign"></i>
+          </p>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <span class="service-icon rounded-circle mx-auto mb-3">
+            <i class="icon-mustache"></i>
+          </span>
+          <h4>
+            <strong>Education Level</strong>
+          </h4>
+          <p class="text-faded mb-0">the highest Education a customer receives</p>
+        </div>
+        <div class="col-lg-3 col-md-6">
+            <span class="service-icon rounded-circle mx-auto mb-3">
+              <i class="icon-mustache"></i>
+            </span>
+            <h4>
+              <strong>Billing and Payment Amounts</strong>
+            </h4>
+            <p class="text-faded mb-0">We collect Billing and Payment amount for the last 6 months</p>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <span class="service-icon rounded-circle mx-auto mb-3">
+              <i class="icon-mustache"></i>
+            </span>
+            <h4>
+              <strong>Other Variables</strong>
+            </h4>
+            <p class="text-faded mb-0">Last 6 months Bill and Payment information</p>
+        </div>
+      </div>
+     <br/>
+    </div>
+
+  </section>
 
     <!-- Callout -->
-    <section class="callout">
+    <section class="callout" id="datavisualization">
       <div class="container text-center">
+          <h2 class="mx-auto mb-5">How Dataset
+              <em>looks</em>
+             like</h2>
           <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
               <ol class="carousel-indicators">
                 <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -145,120 +221,279 @@
       </div>
     </section>
 
- <!-- Variable in the dataset -->
- <section class="content-section bg-primary text-white text-center" id="mlModels">
-    <div class="container text-center">
-      <div class="content-section-heading">
-        <h3 class="text-secondary mb-0">Prediction Model</h3>
-        <h2 class="mb-5">Variables we input</h2>
-      </div>
-      <div class="row">
-        <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
-          <span class="service-icon rounded-circle mx-auto mb-3">
-            <i class="icon-screen-smartphone"></i>
-          </span>
-          <h4>
-            <strong>Age</strong>
-          </h4>
-          <p class="text-faded mb-0">Customer's age</p>
-        </div>
-        <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
-          <span class="service-icon rounded-circle mx-auto mb-3">
-            <i class="icon-pencil"></i>
-          </span>
-          <h4>
-            <strong>Gender</strong>
-          </h4>
-          <p class="text-faded mb-0">whether a customer is a female or male.</p>
-        </div>
-        <div class="col-lg-3 col-md-6 mb-5 mb-md-0">
-          <span class="service-icon rounded-circle mx-auto mb-3">
-            <i class="icon-like"></i>
-          </span>
-          <h4>
-            <strong>Credit Card Limit Balance</strong>
-          </h4>
-          <p class="text-faded mb-0">The maximum amount of the cutomer's credit crad line
-            <i class="fas fa-dollar-sign"></i>
-          </p>
-        </div>
-        <div class="col-lg-3 col-md-6">
-          <span class="service-icon rounded-circle mx-auto mb-3">
-            <i class="icon-mustache"></i>
-          </span>
-          <h4>
-            <strong>Income</strong>
-          </h4>
-          <p class="text-faded mb-0">how much the customer makes</p>
-        </div>
-        <div class="col-lg-3 col-md-6">
-            <span class="service-icon rounded-circle mx-auto mb-3">
-              <i class="icon-mustache"></i>
-            </span>
-            <h4>
-              <strong>Other Variables</strong>
-            </h4>
-            <p class="text-faded mb-0">Last 6 months Bill and Payment information</p>
-          </div>
-      </div>
-     <br/>
-    </div>
-
-  </section>
+ 
 
 
     <!-- Portfolio -->
-    <section class="content-section" id="portfolio">
+    <section class="content-section" id="mlmodels">
       <div class="container">
         <div class="content-section-heading text-center">
-          <h3 class="text-secondary mb-0">Portfolio</h3>
-          <h2 class="mb-5">Recent Projects</h2>
+          <h3 class="text-secondary mb-0">Machine Learning</h3>
+          <h2 class="mb-5">Train our data</h2>
         </div>
         <div class="row no-gutters">
           <div class="col-lg-6">
-            <a class="portfolio-item" href="#portfolio">
+            <a class="portfolio-item" href="#portfolio" data-toggle="modal" data-target="#model_step_1">
               <span class="caption">
                 <span class="caption-content">
-                  <h2>Stationary</h2>
-                  <p class="mb-0">A yellow pencil with envelopes on a clean, blue backdrop!</p>
+                  <h1>Step 1: Regression Models</h1>
+                  <p class="mb-0">we choose 4 regression models to train the dataset <i class="fas fa-table"></i></p>
                 </span>
               </span>
               <img class="img-fluid" src="img/portfolio-1.jpg" alt="">
-            </a>
+            </a> 
           </div>
+          <!-- models_step_1 -->
+          <div class="modal fade" id="model_step_1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                  <!--Content-->
+                  <div class="modal-content">
+                      <!--Header-->
+                      <div class="modal-header">
+                          <h2 class="modal-title">4 Regression Models we choose</h2>
+                      </div>
+                      <!--Body-->
+                      <div class="modal-body">
+                          <div class="list-group">
+                              <a class="list-group-item list-group-item-action active">
+                                Logistic Regression Model
+                              </a>
+                              <a class="list-group-item list-group-item-action">Class Tree  Model</a>
+                              <a class="list-group-item list-group-item-action">Random Forest Model</a>
+                              <a href="#" class="list-group-item list-group-item-action">Naive Bayes Model</a>    
+                          </div>
+                      </div>    
+                  </div>
+                  <!--/.Content-->
+              </div>
+          </div>
+          <!-- end of model_step_1-->
+
           <div class="col-lg-6">
-            <a class="portfolio-item" href="#portfolio">
+            <a class="portfolio-item" href="#portfolio" data-toggle="modal" data-target="#model_step_2">
               <span class="caption">
                 <span class="caption-content">
-                  <h2>Ice Cream</h2>
+                  <h1>Step 2: Confusion Matrixes</h1>
                   <p class="mb-0">A dark blue background with a colored pencil, a clip, and a tiny ice cream cone!</p>
                 </span>
               </span>
               <img class="img-fluid" src="img/portfolio-2.jpg" alt="">
             </a>
           </div>
+          <!-- models_step_2s -->
+          <div class="modal fade" id="model_step_2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-lg modal-dialog-centered modal-success" role="document">
+                  <!--Content-->
+                  <div class="modal-content">
+                      <!--Header-->
+                      <div class="modal-header">
+                          <h2 class="modal-title ">Confusion Matrixes</h2>
+                      </div>
+                      <!--Body-->
+                      <div class="modal-body">
+                          <h5 class='mb-3'>Linear Regression Model</h5>
+                          <div class="table-responsive-sm">
+                              <table class="table table-sm">
+                                  <thead>
+                                    <tr>
+                                      <th>Prediction/Acutal</th>
+                                      <th>non-default</th>
+                                      <th>default</th>
+                                      <th>Total</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr>
+                                      <th>non-default</th>
+                                      <td>3365</td>
+                                      <td>140</td>
+                                      <td>3505</td>
+                                    </tr>
+                                    <tr>
+                                      <th>default</th>
+                                      <td>671</td>
+                                      <td>324</td>
+                                      <td>995</td>
+                                    </tr>
+                                    <tr>
+                                      <th>Total</th>
+                                      <td>4036</td>
+                                      <td>464</td>
+                                      <td>4500</td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                            </div>
+                            <h5 class='mb-3'>Decision Tree Model</h5>
+                            <div class='table-responsive-sm'>
+                                <table class="table table-sm">
+                                    <thead>
+                                      <tr>
+                                        <th>Prediction/Acutal</th>
+                                        <th>non-default</th>
+                                        <th>default</th>
+                                        <th>Total</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr>
+                                        <th>non-default</th>
+                                        <td>3185</td>
+                                        <td>320</td>
+                                        <td>3505</td>
+                                      </tr>
+                                      <tr>
+                                        <th>default</th>
+                                        <td>634</td>
+                                        <td>361</td>
+                                        <td>995</td>
+                                      </tr>
+                                      <tr>
+                                        <th>Total</th>
+                                        <td>3819</td>
+                                        <td>681</td>
+                                        <td>4500</td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                            </div>
+                      </div>
+                      <!-- end of the responsive table -->
+                  </div>
+                  <!--/.Content-->
+              </div>
+          </div>
+          <!-- end of model_step_2-->
+
           <div class="col-lg-6">
-            <a class="portfolio-item" href="#portfolio">
+            <a class="portfolio-item" href="#portfolio" data-toggle="modal" data-target="#model_step_3">
               <span class="caption">
                 <span class="caption-content">
-                  <h2>Strawberries</h2>
-                  <p class="mb-0">Strawberries are such a tasty snack, especially with a little sugar on top!</p>
+                  <h1>Step 3: Performance Tracking</h1>
+                  <p class="mb-0">Based on the Confusion Matrixes, we evaluate the accuracy of models' prediction</p>
                 </span>
               </span>
               <img class="img-fluid" src="img/portfolio-3.jpg" alt="">
             </a>
           </div>
+
+          <!-- models_step_3s -->
+          <div class="modal fade" id="model_step_3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-lg modal-dialog-centered modal-success" role="document">
+                  <!--Content-->
+                  <div class="modal-content">
+                      <!--Header-->
+                      <div class="modal-header">
+                          <h4 class="modal-title ">Peformance Tracking</h4>
+                      </div>
+                      <!--Body-->
+                      <div class="modal-body">
+                          <h3>the accuracy, recall, precision comparsions among models</h3>
+                          <img class ='img-fluid' src='img/regression_models.png'>
+                          <br/>
+                          <div class='table-responsive'>
+                            <table class="table">
+                                <thead>
+                                  <tr>
+                                    <th></th>
+                                    <th>LogisticRegression Model</th>
+                                    <th>ClassTree Model</th>
+                                    <th>RandomForest Model</th>
+                                    <th>NaiveBayes Model</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <th>accuracy</th>
+                                    <td>0.819778</td>
+                                    <td>0.788</td>
+                                    <td>0.813111</td>
+                                    <td>0.770667</td>
+                                  </tr>
+                                  <tr>
+                                    <th>precision</th>
+                                    <td>0.698276</td>
+                                    <td>0.530103</td>
+                                    <td>0.644737</td>
+                                    <td>0.483899</td>
+                                  </tr>
+                                  <tr>
+                                    <th>recall</th>
+                                    <td>0.325628</td>
+                                    <td>0.362814</td>
+                                    <td>0.344724</td>
+                                    <td>0.558794</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                            <h4>Other Metrics</h4>
+                            <p>We can see from the graph that at the recall value shown by the stright line, LogisticReg Model is higher value than NavieBayes model.
+                                So Logistic is the better model to predict the default as compare to NaiveBayes</p>
+                            <img class='img-fluid' src='img/precision-recall-curve.png'>
+                            <br/>
+                            <img class='img-fluid' src='img/logistic_regression_classifire_precision_Recall_curve.png'>
+                            <p>From the above graph, we can see that we can adjust the Recall to be better that Percision by changing the classification threshold.
+                                ### Classifier with threshold of 0.2</p>
+
+                      </div>
+                      
+                  </div>
+                  <!--end of Modal Content-->
+              </div>
+          </div>
+          <!-- end of model_step_3-->
+
           <div class="col-lg-6">
-            <a class="portfolio-item" href="#portfolio">
+            <a class="portfolio-item" href="#portfolio" data-toggle="modal" data-target="#model_step_4">
               <span class="caption">
                 <span class="caption-content">
-                  <h2>Workspace</h2>
-                  <p class="mb-0">A yellow workspace with some scissors, pencils, and other objects.</p>
+                  <h1>A quick peek at the coding</h1>
+                  <p class="mb-0">Display partical codes to create a ML model</p>
                 </span>
               </span>
               <img class="img-fluid" src="img/portfolio-4.jpg" alt="">
             </a>
           </div>
+          <!-- models_step_3s -->
+          <div class="modal  fade" id="model_step_4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-lg modal-dialog-centered modal-success" role="document">
+                  <!--Content-->
+                  <div class="modal-content">
+                      <!--Header-->
+                      <div class="modal-header">
+                          <h2 class="modal-title ">Sample Code</h2>
+                      </div>
+                      <!--Body-->
+                      <div class="modal-body">
+                          <h3>Logistic Regression Model Instanization and Training</h3>
+                          <pre><code class="hljs" data-trim contenteditable>
+# Import the sklearn ML library - Logistic Regression
+from sklearn.linear_model import LogisticRegression
+# Instance of the estimator
+logistic_regression = LogisticRegression(n_jobs=-1, random_state =15)
+# train the estimator
+logistic_regression.fit(X_train, y_train)
+
+# Evaluate the model
+y_pred_test = logistic_regression.predict(X_test)
+# we conduct our evaluation using these 3 _score
+eval_metrix.loc['accuracy', 'LogisticReg Model']= accuracy_score(y_pred=y_pred_test, y_true=y_test)
+eval_metrix.loc['precision', 'LogisticReg Model']= precision_score(y_pred=y_pred_test, y_true=y_test)
+eval_metrix.loc['recall', 'LogisticReg Model']= recall_score(y_pred=y_pred_test, y_true=y_test)    
+
+# Confusion matrix for the logistic regression
+CM = confusion_matrix(y_pred=y_pred_test, y_true=y_test)
+CMatrix(CM)
+
+                                    </code></pre>
+                                </div>
+                                <!-- end of the responsive table -->
+                            </div>
+                            <!--/.Content-->
+                        </div>
+                    </div>
+                    <!-- end of model_step_3-->
         </div>
       </div>
     </section>
@@ -273,17 +508,23 @@
               Start a prediction
             </button>
         </div>
+        <br>
+        <br>
+        <div class="content-section-heading text-center">
+          <h3 class="text-secondary mb-0">{{ prediction_section_title }}</h3>
+            <br>  
+            <h3 class='mb-3'>{{ prediction_result }}</h2>
+        </div>
 
-
-      <div class='container'>
-      <!-- Central Modal Medium Success -->
+ 
+      <!-- the Modal for Prediction Button -->
         <div class="modal fade" id="ModalPredictionInput" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-notify modal-success" role="document">
+            <div class="modal-dialog modal-lg modal-dialog-centered modal-success" role="document">
                 <!--Content-->
-                <div class="modal-content">
+                <div class="modal-content text-primary">
                     <!--Header-->
                     <div class="modal-header">
-                        <p class="heading lead">Input a New Customer Profile</p>
+                        <h2 class="modal-title">Input a New Customer Profile</h2>
             
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true" class="white-text">&times;</span>
@@ -292,71 +533,127 @@
             
                     <!--Body-->
                     <div class="modal-body">
-                        <div class="text-center">
-                            <i class="fa fa-check fa-4x mb-3 animated rotateIn"></i>
-                            <p>this is the placeholder to enter variables</p>
+                        <div class="text-primary">
+                              
+                            <form class="form" action="/#prediction" method="post" >
+                              <div class='form-row'>
+                                <div class="form-group col-md-4">
+                                  <label for="age" class="col-form-label">Age:</label>
+                                  <input name ='age' class="form-control" id="age" placeholder=29>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="gender" class="col-form-label">Gender</label>
+                                    <select class="custom-select" name='gender' id="gender">
+                                        <option selected value=1>Male</option>
+                                        <option value=0>Female</option>
+                                      </select>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="ismarried" class="col-form-label">Marital Status</label>
+                                    <select class="custom-select" name='ismarried' id="ismarried">
+                                        <option selected value="0">Not Married</option>
+                                        <option value="1">Married</option>
+                                      </select>
+                                </div>
+                              </div>  
+                               <!-- education selection  -->
+                                <div class="form-group mx-auto mb-auto">
+                                    <label for="education" class="col-form-label">Highest Education Level</label>
+                                    <select class="custom-select" name='education' id="education">
+                                        <option selected value="1">High School and below</option>
+                                        <option value="2">Unversity or equvalient</option>
+                                        <option value="3">Graducation school</option>
+                                      </select>
+                                </div>
+
+                                <div class="form-group mx-auto mb-auto">
+                                    <label for="cc_limit_balance" class="col-form-label">Credit Card Limit Balance: </label>
+                                    <input type="text" class="form-control" name ='cc_limit_balance' id="cc_limit_balance" placeholder=30000.00>
+                                </div>
+                                <h3 class='mx-auto mb-auto'> Last 6 Mounths Billing and Payment information</h3>
+                                <div class="form-group mx-auto mb-auto">
+                                    <label for="avg_bill_amt" class="col-form-label" >Average Billing Amount</label>
+                                    <input class="form-control" name ='avg_bill_amt' id="avg_bill_amt" placeholder=2000>
+                                </div>
+                                <div class="form-group mx-auto mb-auto">
+                                    <label for="avg_pay_amt" class="col-form-label" >Averge Payment Amount</label>
+                                    <input class="form-control" name ='avg_pay_amt' id="avg_pay_amt" placeholder=2000 >
+                                </div>
+                              <div class='form-row'>
+                                  <div class="form-group col-md-4">
+                                      <label for="repayment_status" class="col-form-label">Avergage Past Due Status</label>
+                                      <select class="custom-select" name='repayment_status' id="repayment_status">
+                                          <option value="-2">no consumption</option>
+                                          <option selected value="-1">pay on time</option>
+                                          <option value="0">the use of revolving credit</option>
+                                          <option value="1">payment delay for one month</option>
+                                          <option value="2">payment delay for two months</option>
+                                          <option value="3">payment delay for three months</option>
+                                          <option value="4">payment delay for two months</option>
+                                          <option value="5">payment delay for five months</option>
+                                          <option value="6">payment delay for six months</option>
+                                        </select>
+                                  </div>
+                                                                
+                              </div>
+                              <div class="form-group modal-footer justify-content-center">
+                                <input type="submit" class="btn btn-dark btn-primary waves-effect" name='submit' >
+                              </div>
+                              </form>
                         </div>
                     </div>
-            
-                    <!--Footer-->
-                    <div class="modal-footer justify-content-center">
-                        <a type="button" class="btn btn-xl btn-primary">Get the result<i class="fa fa-diamond ml-1"></i></a>
-                        <a type="button" class="btn btn-outline-success waves-effect" data-dismiss="modal">Close</a>
-                    </div>
+          
                 </div>
                 <!--/.Content-->
             </div>
         </div>
           <!-- Central Modal Medium Success-->
-      </div>     
+
     </section>    
-    <!-- this section is retired -->
-    <!-- Call to Action -->
-    <!-- <section class="content-section bg-primary text-white">
-      <div class="container text-center">
-        <h2 class="mb-4">The buttons below are impossible to resist...</h2>
-        <a href="#" class="btn btn-xl btn-light mr-4">Click Me!</a>
-        <a href="#" class="btn btn-xl btn-dark">Look at Me!</a>
-      </div>
-    </section> -->
+
 
     <!-- Map -->
-    <section id="contact" class="map">
+    <section id="contact" class="map content-section">
+        <div class="content-section-heading text-center">
+            <h3 class="text-secondary mb-0">About the Program</h3>
+            <h2 class="mb-5">USC BootCamp Data Science 2018</h2>
+        </div>
         <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="10" marginwidth="10" 
         src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=McClintock+Ave,+Los+Angeles,+CA&amp;aq=0&amp;oq=Bootcamp USC&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A&amp;output=embed"></iframe>
         <br/>
         <small>
           <a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=McClintock+Ave,+Los+Angeles,+CA&amp;aq=0&amp;oq=twitter&amp;sll=4.0235569,-118.2902687&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A"></a>
         </small>
+
     </section>
 
 
     <!-- the team -->
     <section id="team" class="content-section">
-      <p>Teamates</p>
-    <ul>
-        * [Abulla Othow Othuw] *
-        <br/>
-        * [Alexandra Boonsook]
-        <br/>
-        * [Farai Mungofa]
-        * [Shanakay Brandford]
-        * [Stephen Wang]
-      </ul>
+        <div class="content-section-heading text-center">
+            <h3 class="text-secondary mb-0">About the team</h3>
+            <h2 class="mb-5">Teammates</h2>
+ 
+        </div>
+        <ul class='container text-center'>
+            <li>Abulla Othow Othuw</li>
+            <li>Alexandra Boonsook</li>
+            <li>Farai Mungofa</ol>
+            <li>Shanakay Brandford</li>
+            <li>Stephen Wang</li>
+            <li>
+                <a class="social-link rounded-circle text-white" href="https://usc.bootcampcontent.com/fireproofsocks/fpg4">
+                   <i class="fab fa-gitlab"> GitLab Repository</i>
+                </a>    
+              </li>            
+        </ul>    
+
     </section>
 
 
     <!-- Footer -->
     <footer class="footer text-center">
       <div class="container text-center">
-        <ul class="list-inline mb-2">
-          <li class="list-inline-item">
-            <a class="social-link rounded-circle text-white" href="https://usc.bootcampcontent.com/fireproofsocks/fpg4">
-              <i class="fab fa-gitlab"></i>
-            </a>
-            <em>GitLab Repository</em>  
-          </li>
-        </ul>
         <p class="text-muted small mb-0">Credit Card Prediction Model created during USC Data Science Bootcamp</p>
       </div>
     </footer>
@@ -387,6 +684,7 @@
 
     <!-- add the reveal.js -->
     <script src="js/reveal.js"></script>
+
   </body>
 
 </html>

@@ -1,8 +1,4 @@
-
-$("#ModalPredictionInput").on('show.bs.modal', function(){
-    alert("Hello World!");
-  });
-
+$('h3.text-secondary mb-0:empty').hide();
 
   // to display the graphic pictures
   var svgWidth=800,svgHeight =600;
@@ -11,7 +7,7 @@ $("#ModalPredictionInput").on('show.bs.modal', function(){
       width = svgWidth- margin.left - margin.right,
       height = svgHeight - margin.top - margin.bottom;
   
-  var outRadius =  Math.min(svgWidth, svgHeight) / 2*0.7;
+  var outRadius =  Math.min(svgWidth, svgHeight) / 2*0.6;
   var innerRadius=0;
   
   var svgChart=d3.select('.carousel-item').append('svg')

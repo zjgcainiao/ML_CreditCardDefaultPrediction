@@ -42,13 +42,13 @@
     }
     img {
       -webkit-transition: -webkit-clip-path 0.25s ease-out;
-      -webkit-clip-path: inset(-1px);
-      clip-path: inset(-1px);
+      -webkit-clip-path: inset(-2px);
+      // clip-path: inset(-2px);
     }
     &:hover {
       img {
-        -webkit-clip-path: inset(2rem);
-        clip-path: inset(2rem);
+        -webkit-clip-path: inset(20rem);
+        clip-path: inset(20rem);
       }
       .caption {
         background-color: fade-out($primary, 0.1);
