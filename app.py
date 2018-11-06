@@ -111,30 +111,30 @@ def default_gender():
     for row in cursor:
         print(row)
         results.append(row)
-    cursor.close()
+    # cursor.close()
     # connection.close()
     return jsonify(results)
 
 #HYPOTHESIS 2: Age plays a factor in the amount of credit granted to an individual x-"age", y-"average credit amount granted"(Bubble Chart)
 @app.route('/api/age_bal')
 def delaycc():
-    connection = pymysql.connect(host=host, user=user, passwd=password, db=db, port=port, cursorclass=pymysql.cursors.DictCursor)
-    cursor = connection.cursor(pymysql.cursors.DictCursor)
+    # connection = pymysql.connect(host=host, user=user, passwd=password, db=db, port=port, cursorclass=pymysql.cursors.DictCursor)
+    # cursor = connection.cursor(pymysql.cursors.DictCursor)
     results = []
     cursor.execute("SELECT age, avg(limit_bal) as avg_credit_granted FROM CreditCardDefault.credit_card_tbl GROUP BY age")   
     print('Description: ', cursor.description)
     for row in cursor:
         print(row)
         results.append(row)
-    cursor.close()
+    # cursor.close()
     # connection.close()
     return jsonify(results)
 
     # cursor.close()
     # connection.close()
 
-cursor.close()
-connection.close()
+# cursor.close()
+# connection.close()
    
 if __name__ == '__main__':
     app.run(debug=True)
