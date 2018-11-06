@@ -1,3 +1,4 @@
 {
-    "python.pythonPath": "C:\\Users\\Shanakay\\Anaconda3\\envs\\PythonSuperWoman\\python.exe"
+    "python.pythonPath": "C:\\Users\\Shanakay\\Anaconda3\\envs\\PythonSuperWoman\\python.exe",
+    "python.linting.enabled": false
 }
