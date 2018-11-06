@@ -55,6 +55,9 @@ project_credit_card_prediction
 * activate the virtualevn `source finalproject/bin/activate` (optional)
 * clone the gitlba repository `git@usc.bootcampcontent.com:fireproofsocks/fpg4.git`
 * install libraries `pip freeze >> requirements.txt`
+* create mysql table using create_mysql_table.sql'
+* the data is located at static/csv/cleaned_creditcard.csv
+* after connecting the database, using the database varibales from the real .env setup (Slack channel fpg4 group)
 * run the command on a terminal `flask run` or `python app.py`
 * visit the http://127.0.0.1:5000/
 
