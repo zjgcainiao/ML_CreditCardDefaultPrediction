@@ -1,25 +1,27 @@
-# [Credit Card Default Predicting Model](http://fpg4finalproject-env.uyjerqqha9.us-west-2.elasticbeanstalk.com/)
+# [Credit Card Default Predicting Model (presentation mode)](http://fpg4finalproject-env.uyjerqqha9.us-west-2.elasticbeanstalk.com/presentation?transition=concave#)
 
- We are using the data from [UCI](https://archive.ics.uci.edu/ml/datasets/default+of+credit+card+clients) to create a credit card defaultprediction model. There are 24 variables in our regression models. We use combined of 4 regression models:
-** logistic regression model
-** decision tree model
-** Random Forest model
-** Naive Bayees model
+ We are using the data from [UCI Engineering Department](https://archive.ics.uci.edu/ml/datasets/default+of+credit+card+clients) to create a credit card defaultprediction model. There are 24 variables in our regression models. We use combined of 4 regression models:
+- logistic regression model
+- decision tree model
+- Random Forest model
+- Naive Bayees model
 
- 11-05-2018
+## last updated
+
+11-07-2018
 
 ## Preview
 
-[![Wesbite Preview](static/img/website_preview.png)](http://fpg4finalproject-env.uyjerqqha9.us-west-2.elasticbeanstalk.com/)
+**[View Live Preview](http://fpg4finalproject-env.uyjerqqha9.us-west-2.elasticbeanstalk.com/presentation?transition=concave#)**
+Go to the [website](http://fpg4finalproject-env.uyjerqqha9.us-west-2.elasticbeanstalk.com/)
 
-**[View Live Preview](http://fpg4finalproject-env.uyjerqqha9.us-west-2.elasticbeanstalk.com/)**
-Go to the [presentation mode](http://fpg4finalproject-env.uyjerqqha9.us-west-2.elasticbeanstalk.com/?transition=concave#)
+[![Wesbite Preview](static/img/website_preview.png)](http://fpg4finalproject-env.uyjerqqha9.us-west-2.elasticbeanstalk.com/)
 
 ## Project folder structure
 
-_project_credit_card_prediction_
+### project_credit_card_prediction
 
-- default_of_credit_card (jupyter notebook workplace
+- default_of_credit_card (jupyter notebook workplace)
 - static
   - css
   - js
