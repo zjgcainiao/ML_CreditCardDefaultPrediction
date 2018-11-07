@@ -21,7 +21,7 @@ Go to the [website](http://fpg4finalproject-env.uyjerqqha9.us-west-2.elasticbean
 
 ### project_credit_card_prediction
 
-- default_of_credit_card (jupyter notebook workplace)
+- core_ML_jupyter_notebook(jupyter notebook workplace)
 - static
   - css
   - js
