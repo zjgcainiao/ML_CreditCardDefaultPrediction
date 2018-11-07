@@ -1,6 +1,6 @@
 # [Credit Card Default Predicting Model](http://fpg4finalproject-env.uyjerqqha9.us-west-2.elasticbeanstalk.com/)
 
- We are using the data from [placeholder](https://archive.ics.uci.edu/ml/datasets/default+of+credit+card+clients) to create a credit card defaultprediction model. There are 24 variables in our regression models. We use combined of 4 regression models:
+ We are using the data from [UCI](https://archive.ics.uci.edu/ml/datasets/default+of+credit+card+clients) to create a credit card defaultprediction model. There are 24 variables in our regression models. We use combined of 4 regression models:
 ** logistic regression model
 ** decision tree model
 ** Random Forest model
@@ -18,10 +18,12 @@ Go to the [presentation mode](http://fpg4finalproject-env.uyjerqqha9.us-west-2.e
 ## Project folder structure
 
 project_credit_card_prediction
---- default_of_credit_card (jupyter notebook workplace)
---- static
-    --- css
-    --- js
+
+- default_of_credit_card (jupyter notebook workplace)
+
+- static
+  - css
+  - js
     --- img
     --- json
     --- scss
