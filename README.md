@@ -12,45 +12,46 @@
 
 [![Wesbite Preview](static/img/website_preview.png)](http://fpg4finalproject-env.uyjerqqha9.us-west-2.elasticbeanstalk.com/)
 
-
 **[View Live Preview](http://fpg4finalproject-env.uyjerqqha9.us-west-2.elasticbeanstalk.com/)**
-Go to the [presentation mode](http://fpg4finalproject-env.uyjerqqha9.us-west-2.elasticbeanstalk.com/presentation)
+Go to the [presentation mode](http://fpg4finalproject-env.uyjerqqha9.us-west-2.elasticbeanstalk.com/?transition=concave#)
 
 ## Project folder structure
+
 project_credit_card_prediction
--- default_of_credit_card (jupyter notebook workplace)
---static
-    -- css
-    -- js
-    -- img
-    -- json
-    -- scss
-    -- lib
-    -- node_modules
-    -- vendor
-    -- favicon.ico
--- templates
-    -- index.html (main page)
-    -- sides_deck.html
+--- default_of_credit_card (jupyter notebook workplace)
+--- static
+    --- css
+    --- js
+    --- img
+    --- json
+    --- scss
+    --- lib
+    --- node_modules
+    --- vendor
+    --- favicon.ico
+--- templates
+    --- index.html (main page)
+    --- sides_deck.html
     -- visuals.html (visualization html to show additional charts)
--- env.example (an example to set up environment to connect to AWS mySQL DB)
--- app.py (main python file)
--- core_ML_logic.py (core prediction file)
--- requirements.txt: list out all necessary libraries/dependanceis for the project
--- readme.md
+--- env.example (an example to set up environment to connect to AWS mySQL DB)
+--- app.py (main python file)
+--- core_ML_logic.py (core prediction file)
+
+--- requirements.txt: list out all necessary libraries/dependanceis for the project
+--- readme.md
 
 ## libararies
+
 * Core Machine Learning Library: sklearn
 * Python libraries: pandas, collections,flask
 * HTML: bootstrap
-* javascript: jQuery, reveal.js, d3.js, newplot.js
+* Javascript: jQuery, reveal.js, d3.js, plotly.js
 * Flask based application
-
-
 
 ## Deployment
 
 ### How to run the code locally
+
 * create a virtual environment (optional). let's say the virtual environment's name is "finalproject". `virtualenv finalproject` (optional)
 * activate the virtualevn `source finalproject/bin/activate` (optional)
 * clone the gitlba repository `git@usc.bootcampcontent.com:fireproofsocks/fpg4.git`
@@ -61,8 +62,8 @@ project_credit_card_prediction
 * run the command on a terminal `flask run` or `python app.py`
 * visit the http://127.0.0.1:5000/
 
+## Team
 
-##Team:
 * Abulla Othow Othuw
 * Alexandra Boonsook
 * Farai Mungofa
@@ -73,5 +74,6 @@ project_credit_card_prediction
 
 Code released under the [MIT]
 The template is based on the [style portfolio](https://blackrockdigital.github.io/startbootstrap-stylish-portfolio).
+
 * https://startbootstrap.com
 * https://twitter.com/SBootstrap

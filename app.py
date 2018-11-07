@@ -51,12 +51,12 @@ def welcome():
     # input_dataset_path='cleaned_creditcard.json'
     prediction_result=''
     prediction_section_title=''
-    if request.method=='POST':
+    if request.method=='POST': 
         age=request.form.get('age')
         if age=='':
             age=29
-        cc_limit_balance=int(float(request.form.get('cc_limit_balance')))
-        gender=int(float(request.form['gender']))
+        cc_limit_balance=int(float(request.form.get('cc_limit_balance'))) or 3000
+        gender=int(float(request.form['gender'])) or 1
         education=int(float(request.form['education']))
         if education==1:
             grad_school=0
@@ -70,10 +70,10 @@ def welcome():
             grad_school=0
             university=9
             hight_school=1
-        ismarried=request.form['ismarried']  
-        avg_bill_amt=float(request.form['avg_bill_amt'])
-        avg_pay_amt=float(request.form['avg_pay_amt'])
-        repayment_status=request.form['repayment_status']    
+        ismarried=request.form['ismarried'] or 1
+        avg_bill_amt=float(request.form['avg_bill_amt']) or 2000
+        avg_pay_amt=float(request.form['avg_pay_amt']) or 2000
+        repayment_status=request.form['repayment_status']  or -1
 
 
         # assume the avg_bill_amt equals the bill_amt_5 to bill_amt6
