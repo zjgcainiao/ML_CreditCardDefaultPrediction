@@ -76,7 +76,8 @@ Go to the [website](http://fpg4finalproject-env.uyjerqqha9.us-west-2.elasticbean
 
 ## Copyright and License
 
-Code released under the [MIT]
+Code released under the [MIT License](https://opensource.org/licenses/MIT)
+
 The template is based on the [style portfolio](https://blackrockdigital.github.io/startbootstrap-stylish-portfolio).
 
-Special Thank you to [Everett Griffiths](https://github.com/fireproofsocks)
+Special Thank you to [Everett Griffiths](https://github.com/fireproofsocks) for inspiration.
