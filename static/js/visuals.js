@@ -42,7 +42,7 @@ function byGender(){
     margin: { t: 35, l: 0 }
   };
 
-  Plotly.plot("pie", pieData, pieLayout);
+  Plotly.plot("pie", pieData, pieLayout,{displayModeBar: false});
   console.log("*******");
 });
 }
@@ -76,7 +76,7 @@ function sept_delayedPayments(){
         colorscale: "Portland"
       }
     }];
-    Plotly.newPlot("bar", data, layout)      
+    Plotly.newPlot("bar", data, layout,{displayModeBar: false})      
 });     
 }
 
@@ -109,7 +109,7 @@ function plotAge(){
     // text: x,
     //mode: 'lines'
   }];
-  Plotly.newPlot("line", data, layout); 
+  Plotly.newPlot("line", data, layout,{displayModeBar: false}); 
   });
   
 }
@@ -145,7 +145,7 @@ function pop_sum(){
   };
   var data = [trace1];
 
-  Plotly.newPlot("bubbles", data, layout);
+  Plotly.newPlot("bubbles", data, layout,{displayModeBar: false});
   });
 }
 
@@ -207,7 +207,7 @@ function bill_summary(){
 
   var data = [trace1, trace2];
 
-  Plotly.newPlot("bar_a", data, layout);
+  Plotly.newPlot("bar_a", data, layout,{displayModeBar: false});
   });
 }
 
