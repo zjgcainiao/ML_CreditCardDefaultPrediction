@@ -1,19 +1,15 @@
 # [Credit Card Default Predicting Model (presentation mode)](http://fpg4finalproject-env.uyjerqqha9.us-west-2.elasticbeanstalk.com/presentation?transition=concave#)
-
- We are using the data from [UCI Engineering Department](https://archive.ics.uci.edu/ml/datasets/default+of+credit+card+clients) to create a credit card defaultprediction model. There are 24 variables in our regression models. We use combined of 4 regression models:
-- logistic regression model
-- decision tree model
-- Random Forest model
-- Naive Bayees model
+ 
+We are using the data from [UCI Engineering Department](https://archive.ics.uci.edu/ml/datasets/default+of+credit+card+clients) to create a credit card default prediction model. There are 24 variables in our regression models. 
 
 ## last updated
 
-11-07-2018
+12-01-2018
 
 ## Preview
 
-**[View Live Preview](http://fpg4finalproject-env.uyjerqqha9.us-west-2.elasticbeanstalk.com/presentation?transition=concave#)**
-Go to the [website](http://fpg4finalproject-env.uyjerqqha9.us-west-2.elasticbeanstalk.com/)
+**[View in the Presentation Mode](http://fpg4finalproject-env.uyjerqqha9.us-west-2.elasticbeanstalk.com/presentation?transition=concave#)**
+or Go to the [website](http://fpg4finalproject-env.uyjerqqha9.us-west-2.elasticbeanstalk.com/)
 
 [![Wesbite Preview](static/img/website_preview.png)](http://fpg4finalproject-env.uyjerqqha9.us-west-2.elasticbeanstalk.com/)
 
@@ -59,25 +55,29 @@ Go to the [website](http://fpg4finalproject-env.uyjerqqha9.us-west-2.elasticbean
 - create a virtual environment (optional). let's say the virtual environment's name is "finalproject". `virtualenv finalproject` (optional)
 - activate the virtualevn `source finalproject/bin/activate` (optional)
 - clone the gitlba repository `git@usc.bootcampcontent.com:fireproofsocks/fpg4.git`
-- install libraries `pip freeze >> requirements.txt`
+- install libraries `pip install -r requirements.txt`
 - create mysql table using create_mysql_table.sql
 - the data is located at static/csv/cleaned_creditcard.csv
 - after connecting the database, using the database varibales from the real .env setup (Slack channel fpg4 group)
 - run the command on a terminal `flask run` or `python app.py`
 - visit the http://127.0.0.1:5000/
 
+## regression models
+
+ We are using the data from [UCI Engineering Department](https://archive.ics.uci.edu/ml/datasets/default+of+credit+card+clients) to create a credit card default prediction model. There are 24 variables in our regression models. We use combined of 4 regression models:
+- logistic regression model
+- decision tree model
+- Random Forest model
+- Naive Bayees model
+
 ## Team
 
-- Abulla Othow Othuw
-- Alexandra Boonsook
-- Farai Mungofa
-- Shanakay Brandford
 - [Stephen Wang](https://github.com/zjgcainiao)
+- and contributors
 
 ## Copyright and License
 
 Code released under the [MIT License](https://opensource.org/licenses/MIT)
 
-The template is based on the [style portfolio](https://blackrockdigital.github.io/startbootstrap-stylish-portfolio).
 
 Special Thank you to [Everett Griffiths](https://github.com/fireproofsocks) for inspiration.

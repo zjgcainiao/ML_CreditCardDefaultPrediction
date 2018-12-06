@@ -40,12 +40,12 @@ CREATE TABLE `CreditCardDefault`.`credit_card_tbl` (
   `bill_amt4` DOUBLE,
   `bill_amt5` DOUBLE,
   `bill_amt6` DOUBLE,
-  `pay_amt1` INT(11),
-  `pay_amt2` INT(11),
-  `pay_amt3` INT(11),
-  `pay_amt4` INT(11),
-  `pay_amt5` INT(11),
-  `pay_amt6` INT(11),
+  `pay_amt1` DOUBLE,
+  `pay_amt2` DOUBLE,
+  `pay_amt3` DOUBLE,
+  `pay_amt4` DOUBLE,
+  `pay_amt5` DOUBLE,
+  `pay_amt6` DOUBLE,
   `cc_default` INT(11),
   `grad_school` INT(11),
   `university` INT(11),
@@ -61,7 +61,7 @@ cursor.execute(create_table_query)
 
 
 # Read the csv file and reference it in the variable, csv_data
-csv_data = csv.reader(open('cleaned_cerditcard.csv', newline=''))
+csv_data = csv.reader(open('static/csv/cleaned_creditcard.csv', newline=''))
 next(csv_data, None)
 # Print data to console
 for row in csv_data:
