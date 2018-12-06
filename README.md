@@ -1,6 +1,6 @@
 # [Credit Card Default Predicting Model (presentation mode)](http://fpg4finalproject-env.uyjerqqha9.us-west-2.elasticbeanstalk.com/presentation?transition=concave#)
  
-We are using the data from [UCI Engineering Department](https://archive.ics.uci.edu/ml/datasets/default+of+credit+card+clients) to create a credit card default prediction model. There are 24 variables in our regression models. 
+We are using the consumer data provided by [UCI Engineering Department](https://archive.ics.uci.edu/ml/datasets/default+of+credit+card+clients) to create a credit card default prediction model. The population is over 30,000.There are 24 variables, including age, sex, education and etc. We use the dataset to train 4 regression models and predict if a new customer would default or not.
 
 ## last updated
 
