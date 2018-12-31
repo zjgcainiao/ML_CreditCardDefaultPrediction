@@ -4,17 +4,17 @@ import numpy as np
 import pandas as pd
 import os
 #import sqlalchemy
-from sqlalchemy import Column, Integer, String, Float
-from sqlalchemy.ext.automap import automap_base
-from sqlalchemy.orm import Session
-from sqlalchemy import text, desc
-from sqlalchemy import create_engine, func
+# from sqlalchemy import Column, Integer, String, Float
+# from sqlalchemy.ext.automap import automap_base
+# from sqlalchemy.orm import Session
+# from sqlalchemy import text, desc
+# from sqlalchemy import create_engine, func
 from flask import render_template
 from flask import Flask, jsonify,request
 import pymysql
 from collections import OrderedDict
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy import text
+# from sqlalchemy.ext.declarative import declarative_base
+# from sqlalchemy import text
 from core_ML_logic import customer_prediction_func
 
 
@@ -25,8 +25,6 @@ from core_ML_logic import customer_prediction_func
 application = Flask(__name__, static_folder='./static', static_url_path='')
 # to make it work with AWS Elastic Beans
 app=application
-
-
 
 prefix=os.getenv("DATABASE_PREFIX")
 host=os.getenv("DATABASE_HOST")
