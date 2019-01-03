@@ -1,4 +1,4 @@
-# [Credit Card Default Predicting Model (presentation mode)](http://www.aboringwebsite.com/presentation?transition=concave#)
+# [Credit Card Default Predicting Model](http://www.aboringwebsite.com/presentation?transition=concave#)
  
 We are using the consumer data provided by [UCI Engineering Department](https://archive.ics.uci.edu/ml/datasets/default+of+credit+card+clients) to create a credit card default prediction model. The population is over 30,000.There are 24 variables, including age, sex, education and etc. We use the dataset to train 4 regression models and predict if a new customer would default or not.
 
@@ -8,7 +8,7 @@ We are using the consumer data provided by [UCI Engineering Department](https://
 
 ## Preview
 
-**[View in the Presentation Mode](http://www.aboringwebsite.com/presentation?transition=concave#)**
+**[the Presentation Mode](http://www.aboringwebsite.com/presentation?transition=concave#)**
 [![Wesbite Preview](static/img/website_preview.png)](http://www.aboringwebsite.com/)
 
 ## Project folder structure
@@ -33,18 +33,18 @@ We are using the consumer data provided by [UCI Engineering Department](https://
 - app.py (main python file)
 - core_ML_logic.py (core prediction model)
 - upload_csv_to_mysql_script.py (run this file to set up a local or remote data table in MySQL database)
-- requirements.txt: list out all necessary libraries/dependanceis for the project
+- requirements.txt: list out all necessary libraries/dependencies for the project
 - README.md
 
-## libraries
+## Libraries
 
-- Core Machine Learning Library: [sklearn](https://scikit-learn.org/stable/)
-- Python libraries: pandas, collections,flask
+- Core machine learning library: [sklearn](https://scikit-learn.org/stable/)
+- Python libraries: Pandas, collections, pymysql
 - HTML: [Bootstrap](https://getbootstrap.com/)
-- Javascript libraries: jQuery, reveal.js, d3.js, plotly.js
-- Web Framework: [Flask](http://flask.pocoo.org/)
+- JavaScript libraries: jQuery, reveal.js, d3.js, plotly.js
+- Web framework: [Flask](http://flask.pocoo.org/)
 
-## server environment
+## Server Environment
 
 - Amazon Elastic Beanstalk
 - Amazon Route 53
@@ -58,11 +58,11 @@ Make sure that you have the python 3 or above installed on your laptop. Your lap
 - create a virtual environment (optional). let's say the virtual environment's name is "creditcardproject". `virtualenv creditcardproject` (optional)
 - activate the virtualevn `source creditcardproject/bin/activate` (optional)
 - clone the github repository `git@github.com:zjgcainiao/ML_CreditCardDefaultPrediction.git`
-- on the terminal (Mac OS), navigate to the current project folder. it should look like `xxx-MacBook-Pro:ML_CreditCardDefaultPrediction:(username)$ `.
+- on the terminal (Mac OS), navigate to the current project folder. it should look like `xxx-MacBook-Pro:ML_CreditCardDefaultPrediction:(username)$:`.
 - install libraries `pip install -r requirements.txt`
-- create a mysql database locally or remotely. 
-- make a copy of .env.example. rename it to .env.
-- modify the parameters in the .env file based on the database configuration.
+- create a mysql database locally or remotely.
+- make a copy of `.env.example` rename it to `.env`.
+- modify the parameters in the `.env` file based on the database configuration.
 - create the data table in Mysql DB by typing in the terminal `python upload_csv_to_mysql_scripts.py`
 - create mysql table using create_mysql_table.sql
 - the data is located at static/csv/cleaned_creditcard.csv
@@ -71,13 +71,18 @@ Make sure that you have the python 3 or above installed on your laptop. Your lap
 - visit the http://127.0.0.1:5000/
 - visit the site in the presentation mode at: http://127.0.0.1:5000/presentation?transition=concave#/
 
-## regression models
+## Regression Models
 
  We are using the data from [UCI Engineering Department](https://archive.ics.uci.edu/ml/datasets/default+of+credit+card+clients) to create a credit card default prediction model. There are 24 variables in our regression models. We use combined of 4 regression models:
-- logistic regression model
-- decision tree model
-- Random Forest model
-- Naive Bayees model
+- Logistic Regression Model
+- Decision Tree model
+- Random Forest Model
+- Naive Bayees Model
+
+## Next Step
+
+Improve the prediction model by implying Netural Network models. 
+Adjust parameters to improve the accuracy 
 
 ## Team
 
