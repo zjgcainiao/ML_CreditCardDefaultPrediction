@@ -4,7 +4,7 @@ We are using the consumer data provided by [UCI Engineering Department](https://
 
 ## last updated
 
-12-01-2018
+01-02-2019
 
 ## Preview
 
@@ -36,13 +36,16 @@ We are using the consumer data provided by [UCI Engineering Department](https://
 - requirements.txt: list out all necessary libraries/dependanceis for the project
 - README.md
 
-## libararies
+## libraries
 
 - Core Machine Learning Library: [sklearn](https://scikit-learn.org/stable/)
 - Python libraries: pandas, collections,flask
-- HTML: bootstrap
+- HTML: [Bootstrap](https://getbootstrap.com/)
 - Javascript libraries: jQuery, reveal.js, d3.js, plotly.js
-- Flask based application
+- Web Framework: [Flask](http://flask.pocoo.org/)
+
+## server environment
+
 - Amazon Elastic Beanstalk
 - Amazon Route 53
 
@@ -50,9 +53,9 @@ We are using the consumer data provided by [UCI Engineering Department](https://
 
 ### How to run the code on your local computer
 
-Make sure that you have the python 3 or above installed on your laptop. Your laptop could be either a PC or Mac. 
+Make sure that you have the python 3 or above installed on your laptop. Your laptop could be either a PC or Mac.
 
-- create a virtual environment (optional). let's say the virtual environment's name is "finalproject". `virtualenv creditcardproject` (optional)
+- create a virtual environment (optional). let's say the virtual environment's name is "creditcardproject". `virtualenv creditcardproject` (optional)
 - activate the virtualevn `source creditcardproject/bin/activate` (optional)
 - clone the github repository `git@github.com:zjgcainiao/ML_CreditCardDefaultPrediction.git`
 - on the terminal (Mac OS), navigate to the current project folder. it should look like `xxx-MacBook-Pro:ML_CreditCardDefaultPrediction:(username)$ `.
