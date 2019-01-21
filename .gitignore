@@ -4,12 +4,17 @@
 .env
 # OS Noise
 .DS_Store
+# ignore any word documaents
+
 .docx
+# ignore the parameters that are defined in the local .env file, such as 
+# 
 .env
+
 *.iml
 .idea/
 __pycache__
 .ipynb_checkpoints
 .vscode
-finalproject
 core_ML_jupyter_notebook/
+tableau_pdf_files/
