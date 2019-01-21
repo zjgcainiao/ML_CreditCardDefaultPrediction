@@ -16,5 +16,6 @@
 __pycache__
 .ipynb_checkpoints
 .vscode
-.core_ML_jupyter_notebook/
-.tableau_pdf_files/
+
+core_ML_jupyter_notebook/*
+tableau_pdf_files/
