@@ -47,11 +47,12 @@ We are using the consumer data provided by [UCI Engineering Department](https://
 ## Server Environment
 
 - Amazon Elastic Beanstalk
-- Amazon Route 53
+
+We used Elastic Beanstalk ito deploy our codes without worrying about the infrastructure. The Elastic Beanstalk environment will automatically set up the EC2 instance, VPC, and handle loan blancing, scaling and etc. You can find more information at Amazon Web Service Elastic Beanstalk webiste(https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/Welcome.html)
 
 ## Deployment
 
-### How to run the code on your local computer
+### 1. How to run the code on your local computer
 
 Make sure that you have the python 3 or above installed on your laptop. Your laptop could be either a PC or Mac.
 
@@ -69,7 +70,7 @@ Make sure that you have the python 3 or above installed on your laptop. Your lap
 - after connecting the database, using the database varibales from the real .env setup (Slack channel fpg4 group)
 - run the command on a terminal `flask run` or `python app.py`
 - visit the http://127.0.0.1:5000/
-- visit the site in the presentation mode at: http://127.0.0.1:5000/presentation?transition=concave#/
+- visit the site in the presentation mode at: <http://127.0.0.1:5000/presentation?transition=concave#/>
 
 ## Regression Models
 
@@ -88,10 +89,13 @@ Adjust parameters to improve the accuracy
 
 - [Stephen Wang](https://github.com/zjgcainiao)
 - and contributors
+  - Abula
+  - Shanakay
+  - Farai
+  - Alexandra
 
 ## Copyright and License
 
 Code released under the [MIT License](https://opensource.org/licenses/MIT)
-
 
 Special Thank you to [Everett Griffiths](https://github.com/fireproofsocks) for inspiration.
