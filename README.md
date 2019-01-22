@@ -53,14 +53,14 @@ version 0.1
 
 Flask is a micro web frmework written in Python. Unlike a full-blown web framework like Ruby on Rails (for Ruby) or Djano for Python, Flask does not require speicfic additional tools or libraries. It does not have any database abstract layer. or You can click here for more information about the basic Flask Framework
 
-To run a flask web application, we need a `app.py` file
-``python
+To run a flask web application, we only need a `app.py` file. Here is the code in the `app.py`.
 
+```python
 from flask import Flask
 @app.route ("/")
 def homepage()
     return "It actually works!"
-``
+```
 
 ### Amazon Elastic Beanstalk
 
