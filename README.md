@@ -1,10 +1,13 @@
 # [Credit Card Default Predicting Model](http://www.aboringwebsite.com/presentation?transition=concave#)
- 
+
 We are using the consumer data provided by [UCI Engineering Department](https://archive.ics.uci.edu/ml/datasets/default+of+credit+card+clients) to create a credit card default prediction model. The population is over 30,000.There are 24 variables, including age, sex, education and etc. We use the dataset to train 4 regression models and predict if a new customer would default or not.
 
 ## last updated
 
-01-02-2019
+01-21-2019
+version 0.1
+
+- flask based web framework
 
 ## Preview
 
@@ -36,7 +39,7 @@ We are using the consumer data provided by [UCI Engineering Department](https://
 - requirements.txt: list out all necessary libraries/dependencies for the project
 - README.md
 
-## Libraries
+## Framework and Libraries
 
 - Core machine learning library: [sklearn](https://scikit-learn.org/stable/)
 - Python libraries: Pandas, collections, pymysql
@@ -46,9 +49,23 @@ We are using the consumer data provided by [UCI Engineering Department](https://
 
 ## Server Environment
 
-- Amazon Elastic Beanstalk
+### Flask Framework
 
-We used Elastic Beanstalk ito deploy our codes without worrying about the infrastructure. The Elastic Beanstalk environment will automatically set up the EC2 instance, VPC, and handle loan blancing, scaling and etc. You can find more information at Amazon Web Service Elastic Beanstalk webiste(https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/Welcome.html)
+Flask is a micro web frmework written in Python. Unlike a full-blown web framework like Ruby on Rails (for Ruby) or Djano for Python, Flask does not require speicfic additional tools or libraries. It does not have any database abstract layer. or You can click here for more information about the basic Flask Framework
+
+To run a flask web application, we need a `app.py` file
+``python
+
+from flask import Flask
+@app.route ("/")
+def homepage()
+    return "It actually works!"
+``
+
+### Amazon Elastic Beanstalk
+
+We used Elastic Beanstalk to deploy our codes without worrying about the infrastructure. The Elastic Beanstalk environment will automatically set up the EC2 instance, VPC, and handle loan blancing, scaling and etc. You can find more information at Amazon Web Service Elastic Beanstalk webiste's
+welcome page[https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/Welcome.html]
 
 ## Deployment
 
@@ -72,6 +89,16 @@ Make sure that you have the python 3 or above installed on your laptop. Your lap
 - visit the http://127.0.0.1:5000/
 - visit the site in the presentation mode at: <http://127.0.0.1:5000/presentation?transition=concave#/>
 
+### 2. Deployment to Elastic Beanstalk
+
+Here are the steps
+
+- clone the github repository `git@github.com:zjgcainiao/ML_CreditCardDefaultPrediction.git`
+- navigate the current folder,make a compressed file of all source files. An example is `creditcardsource_v01.zip`.
+- Create and AWS account and login in the AWS Elastic Beanstalk website.
+- create a Elastic Beanstalk environment.
+- upload the compressed source file in the newly created environment.
+
 ## Regression Models
 
  We are using the data from [UCI Engineering Department](https://archive.ics.uci.edu/ml/datasets/default+of+credit+card+clients) to create a credit card default prediction model. There are 24 variables in our regression models. We use combined of 4 regression models:
@@ -80,10 +107,11 @@ Make sure that you have the python 3 or above installed on your laptop. Your lap
 - Random Forest Model
 - Naive Bayees Model
 
-## Next Step
+## Next Steps
 
-Improve the prediction model by implying Netural Network models. 
-Adjust parameters to improve the accuracy 
+Improve the prediction model by implying Netural Network models.
+Adjust parameters to improve the accuracy
+upgrade from Flask to Django
 
 ## Team
 

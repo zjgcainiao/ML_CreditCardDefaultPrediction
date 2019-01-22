@@ -4,11 +4,7 @@ import numpy as np
 import pandas as pd
 import os
 #import sqlalchemy
-# from sqlalchemy import Column, Integer, String, Float
-# from sqlalchemy.ext.automap import automap_base
-# from sqlalchemy.orm import Session
-# from sqlalchemy import text, desc
-# from sqlalchemy import create_engine, func
+
 from flask import render_template
 from flask import Flask, jsonify,request
 import pymysql

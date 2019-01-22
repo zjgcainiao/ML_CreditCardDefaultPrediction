@@ -1,9 +1,6 @@
 # IDE Noise
 .idea
-
 .idea/
-# db evnironment information Info
-.env
 # OS Noise
 .DS_Store
 # ignore any word documaents
@@ -11,11 +8,10 @@
 .docx
 # ignore the parameters that are defined in the local .env file, such as 
 # change the database parameters in the .env.example file to match with your database configuration
-
+# db evnironment information Info
 .env
 __pycache__
 .ipynb_checkpoints
 .vscode
-
-core_ML_jupyter_notebook/*
+core_ML_jupyter_notebook
 tableau_pdf_files/
